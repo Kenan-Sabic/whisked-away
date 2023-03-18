@@ -137,7 +137,7 @@ body {
 }
 
 .addFilter input {
-  position: absolute;
+  position: relative;
   right: 5%;
   background-color: #e8e8e8;
   width: 215px;
@@ -145,8 +145,7 @@ body {
   border: none;
   border-radius: 9px;
   font-size: 25px;
-  margin-top: 15px;
-  margin-left: 50px;
+  margin-left: 10px;
   padding-left: 10px;
 }
 
@@ -162,15 +161,18 @@ body {
   border-radius: 25px;
   margin-left: 5%;
   margin-top: 50px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
 }
 
 .recipe h2 {
+  margin-left: 10px;
   font-size: 30px;
   font-weight: 400;
   cursor: pointer;
 }
 
 .recipe h3 {
+  margin-left: 10px;
   font-size: 22px;
   font-weight: 300;
 }
@@ -203,4 +205,41 @@ body {
   margin-right: -3px;
   width: 43px;
   height: 43px;
+}
+
+@media only screen and (max-width: 768px) {
+  .banner input {
+    width: 85vw;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter p {
+    margin-top: -10px;
+    margin-left: 0;
+  }
+
+  .line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .recipes {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .body {
+    max-width: 100vw;
+  }
 }
