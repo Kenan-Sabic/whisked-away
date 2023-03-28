@@ -563,8 +563,20 @@ video {
   grid-column-start: 3;
 }
 
+.col-start-2 {
+  grid-column-start: 2;
+}
+
 .col-end-11 {
   grid-column-end: 11;
+}
+
+.col-end-12 {
+  grid-column-end: 12;
+}
+
+.m-10 {
+  margin: 2.5rem;
 }
 
 .m-16 {
@@ -573,6 +585,10 @@ video {
 
 .mb-16 {
   margin-bottom: 4rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mt-10 {
@@ -587,8 +603,20 @@ video {
   margin-top: 0.75rem;
 }
 
-.mt-\[75px\] {
-  margin-top: 75px;
+.mt-\[85px\] {
+  margin-top: 85px;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .flex {
@@ -599,32 +627,52 @@ video {
   display: grid;
 }
 
-.h-screen {
-  height: 100vh;
+.h-\[50px\] {
+  height: 50px;
+}
+
+.h-\[30px\] {
+  height: 30px;
 }
 
 .min-h-screen {
   min-height: 100vh;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
+.w-1\/5 {
+  width: 20%;
+}
+
 .w-full {
   width: 100%;
 }
 
-.w-12 {
-  width: 3rem;
+.w-screen {
+  width: 100vw;
 }
 
-.w-20 {
-  width: 5rem;
+.w-\[70px\] {
+  width: 70px;
 }
 
-.w-28 {
-  width: 7rem;
+.w-\[100px\] {
+  width: 100px;
 }
 
-.w-1\/6 {
-  width: 16.666667%;
+.w-\[150px\] {
+  width: 150px;
+}
+
+.w-\[240px\] {
+  width: 240px;
+}
+
+.w-\[220px\] {
+  width: 220px;
 }
 
 .grid-cols-12 {
@@ -645,6 +693,23 @@ video {
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-t-4 {
+  border-top-width: 4px;
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .bg-jet {
   --tw-bg-opacity: 1;
   background-color: rgb(54 54 54 / var(--tw-bg-opacity));
@@ -660,18 +725,9 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-slate-300 {
+.bg-battleshipgrey {
   --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.p-10 {
-  padding: 2.5rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  background-color: rgb(138 142 145 / var(--tw-bg-opacity));
 }
 
 .py-2 {
@@ -683,13 +739,19 @@ video {
   text-align: left;
 }
 
-.text-start {
-  text-align: start;
-}
-
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -700,9 +762,9 @@ video {
   font-weight: 500;
 }
 
-.text-white {
+.text-blue-600 {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .text-jet {
@@ -715,18 +777,42 @@ video {
   color: rgb(255 158 69 / var(--tw-text-opacity));
 }
 
-.text-blue-600 {
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
   text-decoration-line: underline;
 }
 
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+
 .filter {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.hover\:bg-sandybrown:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 158 69 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-jet:hover {
+  --tw-text-opacity: 1;
+  color: rgb(54 54 54 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
@@ -736,5 +822,23 @@ video {
 
   .sm\:col-end-12 {
     grid-column-end: 12;
+  }
+
+  .sm\:w-1\/5 {
+    width: 20%;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-1\/12 {
+    width: 8.333333%;
+  }
+
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 }
