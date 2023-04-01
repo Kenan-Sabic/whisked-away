@@ -9,18 +9,26 @@ function LoginPage() {
     <div>
       <Navbar />
     <div id='background' className='bg-jet lg:bg-hero-pattern min-h-screen w-full grid grid-cols-12'>
-      <form className='bg-white min-h-screen col-start-2 col-end-12 mt-[85px] mb-3 flex flex-col items-center space-y-1 '>
-        <h2 className='font-medium text-4xl mt-2 mb-10'>Log in</h2>
-        <div className='w-[220px] flex items-start'><label htmlFor="email" className='mt-10 w-1/5 text-left'>Email</label></div>
-        <input type="text" name="email" id="email" className='bg-battleshipgrey w-[220px] h-[30px]' />
-        <div className='w-[220px] flex items-start'><label htmlFor="password" className='mt-4 w-1/5 text-left'>Password</label></div>
-        <input type="password" className='bg-battleshipgrey mt-3 w-[220px] h-[30px]' />
-        <div className='w-[220px] '>
+      <form className='bg-white min-h-screen col-start-2 col-end-12 mt-[85px] mb-3 flex flex-col items-center '>
+        <h2 className='font-medium text-4xl mt-2  mmb-2' >Log in</h2>
+        <div className='w-[220px] text left mmb-1'>
+          <label htmlFor="email" className='mt-10 w-1/5 text-left'>Email</label>
+  
+        <input type="text" name="email" id="email" className='bg-battleshipgrey w-full h-[30px]' /></div>
+        
+        
+        
+        <div className='w-[220px] mmb-05'>
+          <label htmlFor="password" className='w-1/5 text-left'>Password</label>
+        <input type="password" className='bg-battleshipgrey w-[220px] h-[30px]' />
+        </div>
+        <div className='w-[220px] mmb-2'>
         <a href="#" className='text-blue-600 underline'>Forgot password?</a>
         </div>
-        <input type="submit" value="Login" className='mt-4 w-1/4 sm:w-1/5 md:w-1/12 py-2 bg-sandybrown text-jet font-bold rounded' />
-        <button className='mt-16 w-1/4 sm:w-1/5 md:w-1/12 py-2 bg-jet text-sandybrown font-bold rounded'>Register</button>
+        <input type="submit" value="Login" className='mmb-2 mw-6  md:w-1/12 py-2 bg-sandybrown text-jet font-bold rounded' />
+        <button className=' mw-6 sm:w-1/5 md:w-1/12 py-2 bg-jet text-sandybrown font-bold rounded'>Register</button>
       </form>
+      
     </div>
     <Footer />
     </div>
