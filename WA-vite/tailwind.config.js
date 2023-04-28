@@ -16,7 +16,10 @@ export default {
     fontFamily : {
       'Lato' : ['Lato' , 'sans-serif'],
       'Imprima' : ['Imprima' , 'sans-serif'],
-    }
+    },
+    backgroundImage: {
+      'spices' : "url('../src/assets/bgff.jpg')",
+    },
   },
   plugins: [
    
