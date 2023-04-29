@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import krosan1 from "../assets/krosan1.jpg";
 
-import heart from "../assets/icons/heart.png";
+import heart from "../assets/heart.png";
 import bookmark from "../assets/bookmark.png";
 
 const Daily_Recipe = () => {

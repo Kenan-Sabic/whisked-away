@@ -1,8 +1,8 @@
 import React from "react";
-import krosan1 from "../images/krosan1.jpg";
-import krosan2 from "../images/krosan2.jpg";
-import heart from "../images/icons/heart.png";
-import bookmark from "../images/icons/bookmark (1).png";
+import krosan1 from "../assets/krosan1.jpg";
+import krosan2 from "../assets/krosan2.jpg";
+import heart from "../assets/heart.png";
+import bookmark from "../assets/bookmark.png";
 const Recipes = () => {
   return (
     <div>

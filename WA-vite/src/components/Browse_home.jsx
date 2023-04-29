@@ -1,6 +1,6 @@
 import React from "react";
 import bannerImg from "../assets/bgff.jpg";
-import search from "../assets/search.png";
+
 
 
 

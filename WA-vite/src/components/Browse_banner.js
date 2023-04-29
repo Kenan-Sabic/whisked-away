@@ -1,6 +1,6 @@
 import React from "react";
 import bannerImg from "../assets/bgff.jpg";
-import search from "../images/icons/search.png";
+import search from "../assets/search.png";
 const Browse_banner = () => {
   return (
     <div>
