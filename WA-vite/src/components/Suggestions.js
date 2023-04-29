@@ -12,15 +12,15 @@ const Suggestions = () => {
         </div>
 
       <div className="daily-line w-[95%] -mt-4 bg-slate-200 h-0.5 justify-center mx-0 my-auto"></div>  
-      <div className="recipes flex flex-col items-center m-0 w-full">
-        <div className="recipe w-[340px] h-[370px]">
-          <img id="recipe-image" src={krosan1} className="mt-1 ml-5 flex w-6 h-6 cursor-pointer"></img>
-          <h2>Croissants</h2>
-          <h3>
-            Posted by: <a>Faris</a>
+      <div className="recipes flex flex-col md:flex-row items-center m-0 w-full">
+        <div className="recipe w-[340px] h-[370px] bg-slate-200 rounded-3xl ml-[5%] mt-12 shadow-md">
+          <img id="recipe-image" src={krosan1} className="mt-1 ml-5 flex w-[325px]  h-[170px] rounded-3xl cursor-pointer object-cover "></img>
+          <h2 className="ml-3 text-3xl font-normal cursor-pointer">Croissants</h2>
+          <h3 className="ml-3 text-2xl font-light">
+            Posted by: <a className="underline cursor-pointer">Faris</a>
           </h3>
-          <img id="bookmark" src={bookmark}></img>
-          <img id="heart" src={heart}></img>
+          <img id="bookmark" src={bookmark} className="ml-[4%] w-10 h-10 left-4 cursor-pointer"></img>
+          <img id="heart" src={heart} ></img>
         </div>
 
         <div className="recipe">
