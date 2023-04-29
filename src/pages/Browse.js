@@ -5,6 +5,7 @@ import Browse_banner from "../components/Browse_banner";
 import Filters from "../components/Filters";
 import Recipes from "../components/Recipes";
 import "../components/css/browse.css";
+import "../components/css/home.css";
 
 const Browse = () => {
   const [filters, setMyFilters] = useState([]);

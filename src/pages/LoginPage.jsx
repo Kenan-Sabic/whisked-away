@@ -1,36 +1,30 @@
 import React from 'react'
-import '../components/css/output.css'
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import "../components/css/login.css"
 
-function LoginPage() {
+const LoginPage = () => {
   return (
     <div>
-      <Navbar />
-    <div id='background' className='bg-jet lg:bg-hero-pattern min-h-screen w-full grid grid-cols-12'>
-      <form className='bg-white min-h-screen col-start-2 col-end-12 mt-[85px] mb-3 flex flex-col items-center '>
-        <h2 className='font-medium text-4xl mt-2  mmb-2' >Log in</h2>
-        <div className='w-[220px] text left mb-1'>
-          <label htmlFor="email" className='mt-10 w-1/5 text-left'>Email</label>
-  
-        <input type="text" name="email" id="email" className='bg-battleshipgrey w-full h-[30px]' /></div>
-        
-        
-        
-        <div className='w-[220px] mb-5'>
-          <label htmlFor="password" className='w-1/5 text-left'>Password</label>
-        <input type="password" className='bg-battleshipgrey w-[220px] h-[30px]' />
+        <div className='bg-jet md:bg-spices min-h-screen w-full grid grid-cols-12 pt-20'>
+            <form action="#" className='bg-white min-h-screen col-start-2 col-end-12 mb-3 flex flex-col items-center'>
+                <h2 className='font-medium font-Imprima text-5xl mt-4  mb-2'>Log in</h2>
+                <div className='w-[240px] mt-4 mb-5'>
+                    <label htmlFor="email" className='w-1/5 text-left text-2xl'>Email</label>
+                    <input type="email" name="email" id="email" className='bg-battleshipgrey w-full h-9 text-lg' />
+                </div>
+                <div className='w-[240px] mb-3'>
+                    <label htmlFor="password" className='w-1/5 text-left text-2xl'>Password</label>
+                    <input type="password" name="password" id="password" className='bg-battleshipgrey w-full h-9 text-lg' />
+                </div>
+                <div className='w-[240px] mb-16'>
+                     <a href="#" className='text-blue-600 underline text-lg p-1 hover:text-white hover:bg-blue-600 '>Forgot password?</a>
+               </div>
+               <input type="submit" value="Log in" className='bg-sandybrown text-jet p-3.5 w-40 text-3xl font-bold rounded mb-4 cursor-pointer' />
+               <button className='bg-jet text-sandybrown p-3.5 w-40 text-3xl font-bold rounded'>Register</button>
+               <p></p>
+            </form>
+
+
+
         </div>
-        <div className='w-[220px] mb-2'>
-        <a href="#" className='text-blue-600 underline'>Forgot password?</a>
-        </div>
-        <input type="submit" value="Login" className='mb-2   md:w-1/12 py-2 bg-sandybrown text-jet font-bold rounded' />
-        <button className=' mw-6 sm:w-1/5 md:w-1/12 py-2 bg-jet text-sandybrown font-bold rounded'>Register</button>
-      </form>
-      
-    </div>
-    <Footer />
     </div>
   )
 }
