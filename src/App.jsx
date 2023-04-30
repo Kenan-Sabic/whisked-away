@@ -15,9 +15,8 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<HomePage/>}>
-
-        </Route>
+        <Route path='/' element={<HomePage/>}></Route>
+        <Route path='/browse' element={<Browse_banner/>}></Route>
       </Routes>
 
        

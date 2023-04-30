@@ -9,8 +9,8 @@ export default {
       colors: {
         jet: '#363636',
         sandybrown: '#FF9E45',
-        battleshipgrey: '#8A8E91'
-
+        battleshipgrey: '#8A8E91',
+        joshua: '#f4f1e0'
 
     },
     fontFamily : {
