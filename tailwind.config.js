@@ -19,6 +19,11 @@ export default {
     },
     backgroundImage: {
       'spices' : "url('../src/assets/bgff.jpg')",
+      'whisk' : "url('../src/assets/whisk.png')",
+      'whisk-small' : "url('../src/assets/whisk-small.png')",
+      // whisk icon credits https://www.flaticon.com/free-icons/churn  icons created by Ainul Muttakin 
+
+      
     },
   },
   plugins: [
