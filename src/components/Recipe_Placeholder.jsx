@@ -2,7 +2,6 @@ import React from 'react';
 import heart from '../assets/heart.png';
 import bookmark from '../assets/bookmark.png';
 import html2pdf from 'html2pdf.js';
-import DailyRecipeModal from './Daily_Recipe_Modal';
 
 const RecipePlaceholder = ({title, userName, imageSrc}) => {
 
@@ -15,10 +14,9 @@ const RecipePlaceholder = ({title, userName, imageSrc}) => {
     }
 
 
-
   return (
 
-    <div className="w-80 h-96 bg-gray-200 rounded-xl shadow-md ml-5 mt-10">
+    <div className="w-80 h-96 bg-gray-200 rounded-xl shadow-xl ml-5 mt-10 shadow-neutral-800 transition duration-300 ease-in-out transform hover:scale-110">
           <img id="recipe-image" src={imageSrc} className="object-cover w-full h-170 rounded-2xl"></img>
           <h2 className="mt-2 text-3xl font-normal cursor-pointer text-center">{title}</h2>
           <h3 className="text-lg font-light text-center">

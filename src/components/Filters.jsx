@@ -19,11 +19,12 @@ const Filters = () => {
     <div>
       {/*Filters*/}
 
-      <div className="mt-42 md:mt-36 flex-wrap flex items-center flex-col space-y-4 md:flex-row md:ml-12 text-2xl">
-        <p className="mt-4">Filters:</p>
+      <div className="mt-42 mt-24 md:mt-40 flex-wrap flex items-center flex-col space-y-4 md:flex-row rounded-xl text-2xl bg-neutral-700 px-2 py-6">
+        
+        <p className="mt-4 bg-neutral-700 text-white rounded-md px-6 py-2 ml-6 md:ml-8">Filters:</p>
         {filters.map((filter, index) => (
           <div key={index}>
-            <p className="flex bg-gray-300 rounded-xl h-10 px-3 ml-5 md:items-center">
+            <p className="flex bg-gray-300 rounded-xl h-10 px-3 ml-5 md:items-center border border-neutral-800">
               {filter}
               <img
                 className="mt-3 ml-5 flex w-4 h-4 md:mt-1 cursor-pointer"
@@ -35,8 +36,9 @@ const Filters = () => {
           </div>
         ))}
 
-        <div className="w-96 h-1 bg-gray-400 md:mr-4 md:w-full"></div>
-        <div className="addFilter">
+        <div className="w-96 h-1 bg-sandybrown md:mr-4 md:w-full"></div>
+
+        <div className="addFilter md:ml-12">
           <form onSubmit={handleAddFilter}>
             <input
               className="w-full px-4 py-2 rounded-lg text-center placeholder-center bg-gray-200 border-solid border-2 border-neutral-500  rounded-lg text-xl pl-4" 

@@ -20,7 +20,9 @@
     "react-slick": "^0.29.0",
     "react-to-print": "^2.14.12",
     "slick-carousel": "^1.8.1",
-    "sort-by": "^0.0.2"
+    "sort-by": "^0.0.2",
+    "styled-components": "^5.3.10",
+    "tailwind-styled-components": "^2.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

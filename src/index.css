@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    background-color: #FF9E45;
+}
 .header_heading {
     text-align: center;
     font-size: 25px;

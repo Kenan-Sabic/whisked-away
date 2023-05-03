@@ -1,10 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import krosan1 from "../assets/krosan1.jpg";
 import close from '../assets/closebtn.png';
 import ReactDOM from 'react-dom';
-
-
-
 import Calculator from './Calculator';
 
 const DailyRecipeModal = (props) => {
@@ -61,29 +57,29 @@ const DailyRecipeModal = (props) => {
                             <div>
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                     <img src={close} alt="Recipe of the Day 1"  onClick={props.handleCloseModal} className= 'absolute top-6 right-4 cursor-pointer' />
-                                    <h3 className="text-xl leading-6 font-medium text-gray-900">{props.title}</h3>
-                            <div className="mt-2">
-                                <p className="text-sm text-gray-500">Serves: {props.serves}</p>
-                                <p className="text-sm text-gray-500">Prep Time: {props.prepTime}</p>
-                                <p className="text-sm text-gray-500">Cook Time: {props.cookTime}</p>
-                            </div>
-                            <div className="mt-5 text-justify">
-                                <h4 className="text-md leading-5 font-medium text-gray-900 ">Ingredients</h4>
-                                {props.ingredients.split('\n').map((ingredient, index) => (
-                                    <span key={index} className="block break-words mt-2 text-sm">
-                                        {ingredient}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="mt-5 text-justify">
-                                <h4 className="text-md leading-5 font-medium text-gray-900">Instructions</h4>
-                                {props.instructions.split('\n').map((instruction, index) => (
-                                    <span key={index} className="block break-words mt-2 text-sm">
-                                        {instruction}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+                                    <h3 className="text-xl leading-6 font-medium text-gray-900 font-extrabold">{props.title}</h3>
+                                    <div className="mt-2 text-center sm:text-left">
+                                        <p className="text-sm text-gray-500">Serves: {props.serves}</p>
+                                        <p className="text-sm text-gray-500">Prep Time: {props.prepTime}</p>
+                                        <p className="text-sm text-gray-500">Cook Time: {props.cookTime}</p>
+                                    </div>
+                                    <div className="mt-5 text-center sm:text-justify ">
+                                        <h4 className="text-md font-extrabold leading-5 font-medium text-gray-900 ">Ingredients</h4>
+                                        {props.ingredients.split('\n').map((ingredient, index) => (
+                                            <span key={index} className="block break-words mt-2 text-sm">
+                                                {ingredient}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <div className="mt-5 text-center sm:text-justify">
+                                        <h4 className="text-md font-extrabold leading-5 font-medium text-gray-900">Instructions</h4>
+                                        {props.instructions.split('\n').map((instruction, index) => (
+                                            <span key={index} className="block break-words mt-2 text-sm">
+                                                {instruction}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                                 <div>
                                     <img src={props.imageSrc} alt="Recipe of the Day 1" className="w-full h-96 object-cover mt-10 rounded-lg border-solid border-neutral-600" />
                                 </div>
@@ -95,8 +91,7 @@ const DailyRecipeModal = (props) => {
                             <div className="mt-5"></div>
                                 <button onClick={props.handleCloseModal} className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:text-sm">
                                     Close
-                                </button>
-                                
+                                </button> 
                             </div>
                         </div>
                     </div>
