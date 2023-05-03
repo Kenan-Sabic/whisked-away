@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "html2pdf.js": "^0.10.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -17,6 +18,7 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.0",
     "react-slick": "^0.29.0",
+    "react-to-print": "^2.14.12",
     "slick-carousel": "^1.8.1",
     "sort-by": "^0.0.2"
   },
