@@ -8,7 +8,9 @@ import Registration from './pages/Registration'
 import HomePage from './pages/Home'
 import { Routes , Route } from 'react-router-dom'
 import UserPage from './pages/UserPage'
-
+import UserPageFollowers from './pages/UserPageFollowers'
+import UserPageFollowing from './pages/UserPageFollowing'
+import UserPageRecipes from './pages/UserPageRecipes'
 
 function App() {
 
@@ -21,13 +23,15 @@ function App() {
         </Route>
         <Route path='/user' element={<UserPage/>}>
         </Route>
+        <Route path='/user/followers' element={<UserPageFollowers/>}>
+        </Route>
+        <Route path='/user/following' element={<UserPageFollowing/>}>
+        </Route>
+        <Route path='/user/recipes' element={<UserPageRecipes/>}>
+        </Route>
         <Route path='/login' element={<LoginPage/>}></Route>
         <Route path='/register' element={<Registration/>}></Route>
-        
-      </Routes>
-
-       
-      
+      </Routes>      
        
     </div>
   )
