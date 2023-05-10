@@ -14,7 +14,7 @@ const Browse = () => {
       <Browse_search />
       <Filters />
       <Recipes />
-      <Browse_search />
+      <Footer />
     </div>
   );
 };
