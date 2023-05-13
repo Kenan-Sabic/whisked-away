@@ -4,7 +4,7 @@ import LoadMoreButton from './LoadMoreButton'
 const UserPageFollowerTab = () => {
   return (
   <div>
-    <div className='ml-4 mr-4 shadow-lg rounded-md bg-platinum'>
+    <div className='grid grid-cols-1 w-auto md:grid-cols-2 md:gap-x-4 ml-4 mr-4 shadow-lg rounded-md bg-platinum'>
         <FollowerBox/>
         <FollowerBox/>
         <FollowerBox/>

@@ -10,13 +10,13 @@ const UserPageRecipeTab = () => {
     <div className='p-6'>
       <div>
         <div className='grid grid-cols-2 p-6 gap-x-4 gap-y-4 md:grid-cols-3'>
-          <div className='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum flex min-w-[150px] md:col-span-1 h-14 rounded-lg justify-center items-center text-center'>
+          <div className='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum flex min-w-[150px] font-bold md:col-span-1 h-14 rounded-lg justify-center items-center text-center'>
             <h1>Your Recipes</h1>
           </div>
-          <div className='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum flex min-w-[150px] md:col-span-1 h-14 rounded-lg justify-center items-center text-center'>
+          <div className='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum flex min-w-[150px] font-bold md:col-span-1 h-14 rounded-lg justify-center items-center text-center'>
             <h1>Your Favorites</h1>
           </div>
-          <div className='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum flex col-span-2 min-w-[150px] md:col-span-1 h-14 rounded-lg justify-center items-center text-center'>
+          <div className='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum flex col-span-2 font-bold min-w-[150px] md:col-span-1 h-14 rounded-lg justify-center items-center text-center'>
             <h1>Saved Recipes</h1>
           </div>
         </div>
@@ -26,7 +26,9 @@ const UserPageRecipeTab = () => {
         <RecipePlaceholder/>
         <RecipePlaceholder/>
         </div>
-        <LoadMoreButton/>
+          <div className='mt-24'>
+          <LoadMoreButton/>
+          </div>
       </div>
     </div>
   )
