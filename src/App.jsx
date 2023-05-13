@@ -11,6 +11,7 @@ import UserPage from './pages/UserPage'
 import UserPageFollowers from './pages/UserPageFollowers'
 import UserPageFollowing from './pages/UserPageFollowing'
 import UserPageRecipes from './pages/UserPageRecipes'
+import UserPageReviews from './pages/UserPageReviews'
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
         <Route path='/user/following' element={<UserPageFollowing/>}>
         </Route>
         <Route path='/user/recipes' element={<UserPageRecipes/>}>
+        </Route>
+        <Route path='/user/reviews' element={<UserPageReviews/>}>
         </Route>
         <Route path='/login' element={<LoginPage/>}></Route>
         <Route path='/register' element={<Registration/>}></Route>

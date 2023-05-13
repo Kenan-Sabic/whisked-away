@@ -1,20 +1,17 @@
 import React from 'react'
 import FollowerBox from './FollowerBox'
+import LoadMoreButton from './LoadMoreButton'
 const UserPageFollowerTab = () => {
   return (
   <div>
-    <div>
+    <div className='ml-4 mr-4 shadow-lg rounded-md bg-platinum'>
         <FollowerBox/>
         <FollowerBox/>
         <FollowerBox/>
         <FollowerBox/>
         <FollowerBox/>
     </div>
-    <div className='mt-5 justify-center items-center text-center'>
-      <button class='shadow-lg bg-platinum  hover:bg-sandybrown hover:text-platinum mx-auto flex min-w-[200px] h-20 rounded-lg justify-center items-center text-center'>
-          Load more entries
-        </button>
-    </div>
+    <LoadMoreButton/>
   </div>  
   )
 }

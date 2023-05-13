@@ -2,7 +2,7 @@ import React from 'react'
 import userImgDefault from '../assets/userImgDefault.svg'
 const FollowerBox = () => {
   return (
-    <div className='bg-platinum hover:bg-sandybrown shadow-2xl flex row-auto gap-14 px-10 mt-4 items-center flex-nowrap'>
+    <div className='bg-platinum hover:bg-sandybrown shadow-2xl rounded flex row-auto gap-14 px-10 mt-4 items-center flex-nowrap'>
         <div className='shadow-md w-[20%] h-[20%] bg-lightorange rounded-full flex justify-center items-center'>
             <img src={userImgDefault} className='w-auto h-auto rounded-full '>
             </img>

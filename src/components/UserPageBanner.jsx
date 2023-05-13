@@ -2,7 +2,7 @@ import React from 'react'
 import userImgDefault from '../assets/userImgDefault.svg'
 const UserPageBanner = () => {
   return (
-    <div className='flex flex-col md:flex-row bg-platinum w-full h-[50vh] items-center md:items-start'>
+    <div className='flex flex-col md:flex-row bg-platinum w-full h-[40vh] items-center shadow-lg md:items-start'>
           <div className='shadow-md min-w-[240px] min-h-[240px] bg-lightorange rounded-full mt-[-120px] md:ml-[100px] flex justify-center items-center'>
             <img src={userImgDefault} className='w-[240px] h-[240px] rounded-full '>
 
