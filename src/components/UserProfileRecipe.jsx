@@ -6,7 +6,7 @@ import bookmark from "../assets/bookmark.png";
 
 const UserProfileRecipe = () => {
   return (
-    <div className="mb-5 flex w-full flex-col">
+    <div className="mb-8 flex w-full flex-col">
       <div className="flex h-48 w-full justify-start">
         <img
           src={croissant}

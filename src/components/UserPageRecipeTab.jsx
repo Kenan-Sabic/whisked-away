@@ -12,7 +12,7 @@ const UserPageRecipeTab = () => {
     <div className="px-6">
       <div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-4 p-6 md:grid-cols-3">
-          <div className="flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-1">
+          <div className="flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 bg-sandybrown text-center font-bold shadow-lg hover:text-white md:col-span-1">
             <h1>Your Recipes</h1>
           </div>
           <div className="flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-1">

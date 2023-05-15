@@ -37,7 +37,7 @@ const UserPageFollower = () => {
               onClick={() => {
                 window.location.href = "/user/followers";
               }}
-              className="flex h-14 cursor-pointer items-center justify-center rounded-lg text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-1"
+              className="flex h-14 cursor-pointer items-center justify-center rounded-lg bg-sandybrown text-center font-bold shadow-lg hover:text-white md:col-span-1"
             >
               <h1 className="text-center">Followers</h1>
             </div>
