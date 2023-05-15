@@ -19,15 +19,14 @@ const Filters = () => {
     <div>
       {/*Filters*/}
 
-      <div className="mt-42 mt-24 md:mt-40 flex-wrap flex items-center flex-col space-y-4 md:flex-row rounded-xl text-2xl bg-neutral-700 px-2 py-6">
-        
-        <p className="mt-4 bg-neutral-700 text-white rounded-md px-6 py-2 ml-6 md:ml-8">Filters:</p>
+      <div className="flex flex-col flex-wrap items-center space-y-4 rounded-xl px-2 py-6 text-2xl md:flex-row">
+        <p className="ml-6 mt-4 rounded-md px-6 py-2 md:ml-8">Filters:</p>
         {filters.map((filter, index) => (
           <div key={index}>
-            <p className="flex bg-gray-300 rounded-xl h-10 px-3 ml-5 md:items-center border border-neutral-800">
+            <p className="ml-5 flex h-10 items-center rounded-xl border bg-gray-300 px-3">
               {filter}
               <img
-                className="mt-3 ml-5 flex w-4 h-4 md:mt-1 cursor-pointer"
+                className="ml-5 mt-3 flex h-4 w-4 cursor-pointer md:mt-1"
                 src={close}
                 alt="Remove Filter"
                 onClick={() => handleRemoveFilter(filter)}
@@ -36,12 +35,12 @@ const Filters = () => {
           </div>
         ))}
 
-        <div className="w-96 h-1 bg-sandybrown md:mr-4 md:w-full"></div>
+        <div className="h-[2px] w-96 w-full rounded bg-gray-200 md:mr-4"></div>
 
         <div className="addFilter md:ml-12">
           <form onSubmit={handleAddFilter}>
             <input
-              className="w-full px-4 py-2 rounded-lg text-center placeholder-center bg-gray-200 border-solid border-2 border-neutral-500  rounded-lg text-xl pl-4" 
+              className="placeholder-center w-full rounded-lg rounded-lg bg-gray-200 px-4 py-2  pl-4 text-center text-xl"
               type="text"
               placeholder="Add filter"
               value={newFilter}

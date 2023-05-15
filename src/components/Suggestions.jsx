@@ -3,16 +3,16 @@ import krosan1 from "../assets/krosan1.jpg";
 import RecipePlaceholder from "./Recipe_Placeholder";
 
 const Suggestions = () => {
-
   return (
     <div className="max-w-[100vw]">
-
-      <div className="filters flex flex-col justify-center items-center mt-8 flex-wrap md:flex-row ml-11 text-4xl">
-        <p className="-ml-16  rounded-lg px-2 py-2  text-neutral-700 font-extrabold">YOU WILL LOVE THESE</p>
+      <div className="filters ml-11 mt-8 flex flex-col flex-wrap items-center justify-center text-4xl md:flex-row">
+        <p className="-ml-16  rounded-lg px-2 py-2  font-extrabold text-neutral-700">
+          YOU WILL LOVE THESE
+        </p>
       </div>
 
-      <div className="daily-line w-[95%] -mt-0 bg-neutral-700 h-0.5 justify-center mx-0 my-auto ml-2 md:ml-8  "></div>  
-      <div className="flex flex-wrap space-x-5 ml-16 md:ml-8 md:space-x-8">
+      <div className="daily-line mx-0 my-auto -mt-0 ml-2 h-0.5 w-[95%] justify-center bg-neutral-700 md:ml-8  "></div>
+      <div className="ml-16 flex flex-wrap justify-evenly space-x-5 md:ml-8 md:space-x-8">
         <RecipePlaceholder
           title="Croissants"
           userName="Faris"

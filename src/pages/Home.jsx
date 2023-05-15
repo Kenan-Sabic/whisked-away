@@ -8,12 +8,11 @@ import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import CalculatorHome from "../components/CalculatorHome";
 const HomePage = () => {
-  
   return (
-    <div>
+    <div className="bg-neutral-200">
       <Navbar />
-      <Browse_page/>
-      <Daily_Recipe/>
+      <Browse_page />
+      <Daily_Recipe />
       <Suggestions />
       <CalculatorHome />
       <ContactForm />

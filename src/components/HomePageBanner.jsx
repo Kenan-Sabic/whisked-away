@@ -3,17 +3,28 @@ import bannerImg from "../assets/bgff.jpg";
 
 const HomePageBanner = () => {
   const handleClick = () => {
-        window.location.href = '/browse';
+    window.location.href = "/browse";
   };
-      
+
   return (
     <div>
       {/* Banner and search bar*/}
-      <div className="flex flex-col justify-center items-center pt-20 text-white font-Lato mb-28">
-        <img src={bannerImg} className="absolute w-full h-[400px] object-cover z-0 brightness-75 object-center" ></img>
-        <h1 className="text-5xl font-extrabold z-[5] mb-4 mt-10 ml-10">WHISKED AWAY - RECIPES ARCHIVE</h1>
-        <button type="button" className="bg-sandybrown text-white py-[10px] px-5 border-none rounded-md cursor-pointer text-base transition-all z-[6]
-        hover:py-3 hover:px-[22px] hover:text-lg" onClick={handleClick}>CLICK AND FIND A RECIPE FOR YOURSELF!</button>
+      <div className="mb-28 flex flex-col items-center justify-center pt-20 font-Lato text-white">
+        <img
+          src={bannerImg}
+          className="absolute z-0 h-[400px] w-full object-cover object-center brightness-75"
+        ></img>
+        <h1 className="z-[5] mb-4 ml-10 mt-10 text-5xl font-extrabold">
+          WHISKED AWAY - RECIPES ARCHIVE
+        </h1>
+        <button
+          type="button"
+          className="z-[6] cursor-pointer rounded-md border-none bg-sandybrown px-5 py-[10px] text-base text-white transition-all
+        hover:px-[22px] hover:py-3 hover:text-lg"
+          onClick={handleClick}
+        >
+          CLICK AND FIND A RECIPE FOR YOURSELF!
+        </button>
       </div>
     </div>
   );

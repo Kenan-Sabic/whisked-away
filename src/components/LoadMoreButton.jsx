@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const LoadMoreButton = () => {
   return (
-    <div className='mt-7 justify-center items-center text-center'>
-      <button className='shadow-2xl bg-platinum  hover:bg-sandybrown hover:text-platinum mx-auto flex min-w-[200px] h-20 rounded-lg justify-center items-center text-center'>
-          <b>Load more entries</b>
-        </button>
+    <div className="mt-7 items-center justify-center text-center">
+      <button className="mx-auto flex  h-20 min-w-[200px] items-center justify-center rounded-lg bg-platinum text-center shadow-2xl hover:bg-sandybrown hover:text-white">
+        <b>Load more entries</b>
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default LoadMoreButton
+export default LoadMoreButton;
