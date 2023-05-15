@@ -1,8 +1,27 @@
-import React from "react";
+import { React, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import axios from "axios";
 const Registration = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = {
+      name,
+      email,
+      bio,
+      password,
+    };
+
+    axios.post("http://localhost:4000/api/user", user).then((res) => {
+      console.log(user);
+    });
+  };
+
   return (
     <div>
       <Navbar />
@@ -12,6 +31,7 @@ const Registration = () => {
             <form
               action="#"
               className="lg:h-100 z-10 flex h-full flex-col  items-center justify-center rounded-3xl bg-white bg-opacity-80 pb-20"
+              onSubmit={handleSubmit}
             >
               <h2 className="mb-2 mt-4 font-Imprima text-5xl  font-medium">
                 Register
@@ -21,6 +41,8 @@ const Registration = () => {
                   Username
                 </label>
                 <input
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   type="text"
                   placeholder="Username"
                   maxLength={30}
@@ -34,6 +56,8 @@ const Registration = () => {
                   Email
                 </label>
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   type="email"
                   placeholder="Email"
                   name="email"
@@ -51,6 +75,8 @@ const Registration = () => {
                   Password
                 </label>
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                   type="password"
                   placeholder="Password"
                   name="password"
@@ -66,6 +92,8 @@ const Registration = () => {
                   Bio
                 </label>
                 <textarea
+                  onChange={(e) => setBio(e.target.value)}
+                  value={bio}
                   rows={3}
                   maxLength={150}
                   placeholder="Bio"
@@ -77,13 +105,12 @@ const Registration = () => {
 
               <input
                 type="submit"
-                value="Create Account"
                 className="mb-4 w-64 cursor-pointer rounded bg-sandybrown p-3.5 text-3xl font-bold text-jet"
               />
               <p>Already have an account?</p>
               <a
                 href="../login"
-                className="w-36 bg-jet p-2 text-center text-xl text-white"
+                className="w-36 p-2 text-center text-3xl text-sandybrown"
               >
                 Log in
               </a>
