@@ -5,6 +5,8 @@ import heart from "../assets/heart.png";
 import bookmark from "../assets/bookmark.png";
 import RecipePlaceholder from "./RecipeBeta";
 import LoadMoreButton from "./LoadMoreButton";
+import croissant from "../assets/krosan1.jpg";
+import UserProfileRecipe from "./UserProfileRecipe";
 const UserPageRecipeTab = () => {
   return (
     <div className="px-6">
@@ -20,15 +22,13 @@ const UserPageRecipeTab = () => {
             <h1>Saved Recipes</h1>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <RecipePlaceholder />
-          <RecipePlaceholder />
-          <RecipePlaceholder />
-          <RecipePlaceholder />
-        </div>
-        <div className="mt-24">
-          <LoadMoreButton />
-        </div>
+        <div className="flex"></div>
+        <UserProfileRecipe />
+        <UserProfileRecipe />
+        <UserProfileRecipe />
+      </div>
+      <div className="mt-24">
+        <LoadMoreButton />
       </div>
     </div>
   );

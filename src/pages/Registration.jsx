@@ -22,6 +22,7 @@ const Registration = () => {
                 </label>
                 <input
                   type="text"
+                  placeholder="Username"
                   maxLength={30}
                   name="username"
                   id="username"
@@ -34,6 +35,7 @@ const Registration = () => {
                 </label>
                 <input
                   type="email"
+                  placeholder="Email"
                   name="email"
                   id="email"
                   className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
@@ -50,6 +52,7 @@ const Registration = () => {
                 </label>
                 <input
                   type="password"
+                  placeholder="Password"
                   name="password"
                   id="password"
                   className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
@@ -65,6 +68,7 @@ const Registration = () => {
                 <textarea
                   rows={3}
                   maxLength={150}
+                  placeholder="Bio"
                   name="bio"
                   id="bioTextArea"
                   className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
