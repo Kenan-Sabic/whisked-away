@@ -7,7 +7,7 @@ const Registration = () => {
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setDefaultResultOrder] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = {
@@ -18,7 +18,14 @@ const Registration = () => {
     };
 
     axios.post("http://localhost:4000/api/user", user).then((res) => {
-      console.log(user);
+      //if bad request set error to error message
+      if (res.data.error) {
+        setDefaultResultOrder(res.data.error);
+      }
+      //if good request set error to success message
+      else {
+        window.location.href = "/login";
+      }
     });
   };
 

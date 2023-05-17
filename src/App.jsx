@@ -12,6 +12,7 @@ import UserPageFollowers from "./pages/UserPageFollowers";
 import UserPageFollowing from "./pages/UserPageFollowing";
 import UserPageRecipes from "./pages/UserPageRecipes";
 import UserPageReviews from "./pages/UserPageReviews";
+import UserPageAddRecipe from "./pages/UserPageAddRecipe";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/user/followers" element={<UserPageFollowers />}></Route>
         <Route path="/user/following" element={<UserPageFollowing />}></Route>
         <Route path="/user/recipes" element={<UserPageRecipes />}></Route>
+        <Route path="/user/recipes/add" element={<UserPageAddRecipe />}></Route>
         <Route path="/user/reviews" element={<UserPageReviews />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/register" element={<Registration />}></Route>

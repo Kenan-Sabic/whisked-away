@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from "axios";
 function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,6 +11,18 @@ function ContactForm() {
     event.preventDefault();
     setIsSubmitting(true);
     //Add logic to send form data to backend for processing
+    axios
+      .post("http://localhost:4000/api/sendmail", { name, email, message })
+      .then((res) => {
+        //if bad request set error to error message
+        if (res.data.error) {
+          setSubmitSuccess(false);
+        }
+        //if good request set error to success message
+        else {
+          setSubmitSuccess(true);
+        }
+      });
 
     console.log({ name, email, message });
     setSubmitSuccess(true);
@@ -18,15 +30,21 @@ function ContactForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto">
-      <form onSubmit={handleSubmit} className="bg-sandybrown p-6 rounded-lg shadow-md border-2 border-neutral-700 mt-2 ">
-        <h2 className="text-2xl text-neutral-700 font-bold mb-6">Contact Us</h2>
+    <div className="mx-auto max-w-lg">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-2 rounded-lg border-2 border-neutral-700 bg-sandybrown p-6 shadow-md "
+      >
+        <h2 className="mb-6 text-2xl font-bold text-neutral-700">Contact Us</h2>
         {submitSuccess ? (
-          <p className="text-neutral-700 mb-4">Thanks for your message!</p>
+          <p className="mb-4 text-neutral-700">Thanks for your message!</p>
         ) : (
           <>
             <div className="mb-4">
-              <label htmlFor="name" className="block font-medium mb-2 text-neutral-700">
+              <label
+                htmlFor="name"
+                className="mb-2 block font-medium text-neutral-700"
+              >
                 Name
               </label>
               <input
@@ -34,12 +52,15 @@ function ContactForm() {
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="bg-neutral-300 border-gray-300 py-2 px-4 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-md border-gray-300 bg-neutral-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block font-medium mb-2 text-neutral-700">
+              <label
+                htmlFor="email"
+                className="mb-2 block font-medium text-neutral-700"
+              >
                 Email
               </label>
               <input
@@ -47,12 +68,15 @@ function ContactForm() {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-neutral-300 border-gray-300 py-2 px-4 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-md border-gray-300 bg-neutral-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="message" className="block font-medium mb-2 text-neutral-700">
+              <label
+                htmlFor="message"
+                className="mb-2 block font-medium text-neutral-700"
+              >
                 Message
               </label>
               <textarea
@@ -60,14 +84,14 @@ function ContactForm() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows="5"
-                className="bg-neutral-300 border-gray-300 py-2 px-4 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full rounded-md border-gray-300 bg-neutral-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 required
               ></textarea>
             </div>
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-orange-500 py-2 px-4 rounded-md text-white hover:bg-orange-600 transition-colors"
+                className="rounded-md bg-orange-500 px-4 py-2 text-white transition-colors hover:bg-orange-600"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
@@ -80,4 +104,4 @@ function ContactForm() {
   );
 }
 
-export default ContactForm
+export default ContactForm;
