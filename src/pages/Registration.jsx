@@ -1,54 +1,133 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-
-
+import { React, useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import axios from "axios";
 const Registration = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setDefaultResultOrder] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = {
+      name,
+      email,
+      bio,
+      password,
+    };
+
+    axios.post("http://localhost:4000/api/user", user).then((res) => {
+      //if bad request set error to error message
+      if (res.data.error) {
+        setDefaultResultOrder(res.data.error);
+      }
+      //if good request set error to success message
+      else {
+        window.location.href = "/login";
+      }
+    });
+  };
+
   return (
     <div>
-        <Navbar/>
-         <div className='bg-jet md:bg-spices min-h-screen w-full grid grid-cols-12 pt-20'>
-         <div className='col-start-2 col-end-12 mb-3 pt-3 bg-white rounded-3xl min-h-screen'>
-            <div className=' mb-0 pt-0 bg-whisk-small bg-repeat-round min-h-screen w-full rounded-3xl'>
-            <form action="#" className='bg-white bg-opacity-80 rounded-3xl min-h-screen w-full col-start-2 col-end-12 mb-3 flex flex-col items-center'>
-                <h2 className='font-medium font-Imprima text-5xl mt-4  mb-2'>Register</h2>
-                <div className='w-[240px] mt-4 mb-5'>
-                    <label htmlFor="email" className='w-1/5 text-left text-2xl'>Username</label>
-                    <input type="text" maxLength={30} name="username" id="username" className='bg-battleshipgrey w-full h-9 text-lg' />
-                </div>
-                <div className='w-[240px]  mb-5'>
-                    <label htmlFor="email" className='w-1/5 text-left text-2xl'>Email</label>
-                    <input type="email" name="email" id="email" className='bg-battleshipgrey w-full h-9 text-lg' />
-                </div>
-                <div className='w-[240px] mb-3'>
-                    <label htmlFor="password" maxLength={30} className='w-1/5 text-left text-2xl'>Password</label>
-                    <input type="password" name="password" id="password" className='bg-battleshipgrey w-full h-9 text-lg' />
-                </div>
-                <div className='w-[240px] mb-3'>
-                    <label htmlFor="passwordConfirm" maxLength={30} className='w-1/5 text-left text-2xl'> Confirm Password</label>
-                    <input type="password" name="password" id="passwordConfirm" className='bg-battleshipgrey w-full h-9 text-lg' />
-                </div>
-                <div className='w[240px] mb-10'>
-                    <label htmlFor="bioTextArea" className='w-1/5 text-left text-2xl'>Bio</label>
-                    <textarea rows={3} maxLength={150} name='bio' id='bioTextArea' className='bg-battleshipgrey w-full  text-base resize-none' />
-                </div>
-                
-               <input type="submit" value="Create Account" className='bg-sandybrown text-jet p-3.5 w-64 text-3xl font-bold rounded mb-4 cursor-pointer' />
-               <p>Already have an account?</p>
-               <a href="../login" className='bg-jet w-36 p-2 text-center text-xl text-white'>Log in</a>
-               
+      <Navbar />
+      <div className="grid min-h-screen w-full grid-cols-11 bg-jet bg-cover pt-20 md:bg-spices">
+        <div className="h-7/8 col-start-5 col-end-8 mb-auto mt-auto rounded-3xl bg-white">
+          <div className=" mb-0 h-full w-full rounded-3xl ">
+            <form
+              action="#"
+              className="lg:h-100 z-10 flex h-full flex-col  items-center justify-center rounded-3xl bg-white bg-opacity-80 pb-20"
+              onSubmit={handleSubmit}
+            >
+              <h2 className="mb-2 mt-4 font-Imprima text-5xl  font-medium">
+                Register
+              </h2>
+              <div className="mb-5 mt-4 w-[240px]">
+                <label htmlFor="email" className="w-1/5 text-left text-2xl">
+                  Username
+                </label>
+                <input
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  type="text"
+                  placeholder="Username"
+                  maxLength={30}
+                  name="username"
+                  id="username"
+                  className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
+                />
+              </div>
+              <div className="mb-5  w-[240px]">
+                <label htmlFor="email" className="w-1/5 text-left text-2xl">
+                  Email
+                </label>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
+                />
+              </div>
+              <div className="mb-3 w-[240px]">
+                <label
+                  htmlFor="password"
+                  maxLength={30}
+                  className="w-1/5 text-left text-2xl"
+                >
+                  {" "}
+                  Password
+                </label>
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  id="password"
+                  className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
+                />
+              </div>
+              <div className="w[240px] mb-10">
+                <label
+                  htmlFor="bioTextArea"
+                  className="w-1/5 text-left text-2xl"
+                >
+                  Bio
+                </label>
+                <textarea
+                  onChange={(e) => setBio(e.target.value)}
+                  value={bio}
+                  rows={3}
+                  maxLength={150}
+                  placeholder="Bio"
+                  name="bio"
+                  id="bioTextArea"
+                  className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
+                />
+              </div>
 
+              <input
+                type="submit"
+                className="mb-4 w-64 cursor-pointer rounded bg-sandybrown p-3.5 text-3xl font-bold text-jet"
+              />
+              <p>Already have an account?</p>
+              <a
+                href="../login"
+                className="w-36 p-2 text-center text-3xl text-sandybrown"
+              >
+                Log in
+              </a>
             </form>
-            </div>
-            </div>
-
-
+          </div>
         </div>
-        <Footer/>
-
-
+      </div>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Registration
+export default Registration;

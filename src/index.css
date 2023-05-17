@@ -1,5 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Imprima&family=Lato&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+}
+
+.header_heading {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+.header_div {
+  background-color: #ff9e45;
+}
+
+.input_part {
+  border: 2px solid #ff9e45;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: 50%;
+  margin-top: 5%;
+}
+
+.optionBtn {
+  background-color: #ff9e45;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.optionsPart {
+  background-color: #ff9e45;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #ff9e45;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  position: absolute;
+  top: 60%;
+  left: 70%;
+}
+
+.selectedGrams {
+  color: #ff9e45;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  position: absolute;
+  top: 80%;
+  left: 70%;
+}
+
+.selectedCups {
+  color: #ff9e45;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  position: absolute;
+  top: 80%;
+  left: 70%;
+}

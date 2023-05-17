@@ -1,39 +1,68 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 const LoginPage = () => {
   return (
     <div>
-        <Navbar/>
-        <div className='bg-jet md:bg-spices min-h-screen w-full grid grid-cols-12 pt-20'>
-            <div className='col-start-2 col-end-12 mb-3 pt-3 bg-white rounded-3xl min-h-screen'>
-            <div className=' mb-0 pt-0 bg-whisk-small bg-repeat-round min-h-screen w-full rounded-3xl'>
-            <form action="#" className='bg-white bg-opacity-80 min-h-screen lg:h-1/2 pb-20  flex flex-col items-center justify-center rounded-3xl z-10'>
-                <h2 className='font-medium font-Imprima text-5xl mt-4  mb-2'>Log in</h2>
-                <div className='w-[240px] mt-4 mb-5'>
-                    <label htmlFor="email" className='w-1/5 text-left text-2xl'>Email</label>
-                    <input type="email" name="email" id="email" className='bg-battleshipgrey w-full h-9 text-lg' />
-                </div>
-                <div className='w-[240px] mb-3'>
-                    <label htmlFor="password" className='w-1/5 text-left text-2xl'>Password</label>
-                    <input type="password" name="password" id="password" className='bg-battleshipgrey w-full h-9 text-lg' />
-                </div>
-                <div className='w-[240px] mb-16'>
-                     <a href="" className='text-blue-600 underline text-lg p-1 hover:text-white hover:bg-blue-600 '>Forgot password?</a>
-               </div>
-               <input type="submit" value="Log in" className='bg-sandybrown text-jet p-3.5 w-40 text-3xl font-bold rounded mb-4 cursor-pointer' />
-               <a href='../register' className='bg-jet text-sandybrown p-3.5 w-40 text-3xl font-bold rounded'>Register</a>
-               <p></p>
+      <Navbar />
+      <div className="grid min-h-screen w-full grid-cols-11 bg-jet bg-cover pt-20 md:bg-spices">
+        <div className="col-start-5 col-end-8 mb-auto mt-auto h-3/4 rounded-3xl bg-white">
+          <div className=" mb-0 h-full w-full rounded-3xl ">
+            <form
+              action="#"
+              className="lg:h-100 z-10 flex h-full flex-col  items-center justify-center rounded-3xl bg-white bg-opacity-80 pb-20"
+            >
+              <h2 className="mb-2 mt-4 font-Imprima text-5xl  font-medium">
+                Log in
+              </h2>
+              <div className="mb-5 mt-4 w-[340px]">
+                <label htmlFor="email" className="w-1/5 text-left text-2xl">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  id="email"
+                  className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
+                />
+              </div>
+              <div className="mb-3 w-[340px]">
+                <label htmlFor="password" className="w-1/5 text-left text-2xl">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  id="password"
+                  className="h-12 w-full rounded bg-gray-200 p-3 text-lg"
+                />
+              </div>
+              <div className="mb-16 flex w-[240px] justify-center">
+                <a href="" className="p-1 text-lg text-blue-600 underline">
+                  Forgot password?
+                </a>
+              </div>
+              <input
+                type="submit"
+                value="Log in"
+                className="mb-4 w-40 cursor-pointer rounded bg-sandybrown p-3.5 text-3xl font-bold text-jet"
+              />
+              <a
+                href="../register"
+                className="w-40 rounded p-3.5 text-3xl font-bold text-sandybrown"
+              >
+                Register
+              </a>
+              <p></p>
             </form>
-            </div>
-            </div>
-
-
-
+          </div>
         </div>
-        <Footer/>
+      </div>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
