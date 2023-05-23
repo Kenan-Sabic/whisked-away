@@ -1,11 +1,10 @@
 import React from 'react';
+import UserPageBio from '../components/UserPageBio';
 import Navbar from '../components/Navbar';
 import UserPageBanner from '../components/UserPageBanner';
-import UserPageFollowerTab from '../components/UserPageFollowerTab';
-import UserPageBio from '../components/UserPageBio';
+import UserPageSavedRecipesTab from '../components/UserPageSavedRecipesTab';
 import Footer from '../components/Footer';
-import UserPageFollowersTab from '../components/UserPageFollowersTab';
-const UserPageFollowing = () => {
+const UserPageSavedRecipes = () => {
 	return (
 		<div className='bg-neutral-100'>
 			<Navbar />
@@ -19,7 +18,7 @@ const UserPageFollowing = () => {
 				<div className='mb-5  flex w-full flex-col items-center rounded-md border border-dashed border-sandybrown bg-neutral-50 text-center shadow-2xl md:col-start-4 md:col-end-11 md:mt-[-170px]'>
 					<div className='mt-8 grid w-full grid-cols-2 gap-x-4 gap-y-4 rounded-lg p-6 md:grid-cols-4 md:gap-x-6'>
 						<div
-							className='flex h-14 cursor-pointer  items-center justify-center rounded-lg text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-1'
+							className='flex h-14 cursor-pointer  items-center justify-center rounded-lg bg-sandybrown text-center font-bold shadow-lg hover:text-white md:col-span-1'
 							onClick={() => {
 								window.location.href = '/user/recipes';
 							}}
@@ -46,14 +45,14 @@ const UserPageFollowing = () => {
 							onClick={() => {
 								window.location.href = '/user/following';
 							}}
-							className='flex h-14 cursor-pointer items-center justify-center rounded-lg bg-sandybrown text-center font-bold shadow-lg hover:text-white md:col-span-1'
+							className='flex h-14 cursor-pointer items-center justify-center rounded-lg text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-1'
 						>
 							<h1 className='text-center'>Following</h1>
 						</div>
 					</div>
 
-					<div className='m-5 mb-10 w-full bg-neutral-50 pb-4'>
-						<UserPageFollowersTab />
+					<div className='mb-10 w-full bg-neutral-50'>
+						<UserPageSavedRecipesTab />
 					</div>
 				</div>
 			</div>
@@ -62,4 +61,4 @@ const UserPageFollowing = () => {
 	);
 };
 
-export default UserPageFollowing;
+export default UserPageSavedRecipes;

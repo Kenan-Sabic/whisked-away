@@ -13,18 +13,20 @@ import UserPageFollowing from './pages/UserPageFollowing';
 import UserPageRecipes from './pages/UserPageRecipes';
 import UserPageReviews from './pages/UserPageReviews';
 import UserPageAddRecipe from './pages/UserPageAddRecipe';
-
+import UserPageLikedRecipes from './pages/UserPageLikedRecipes';
+import UserPageSavedRecipes from './pages/UserPageSavedRecipes';
 function App() {
 	return (
 		<div>
 			<Routes>
-				<Route path='/hello' element={<ImageTest />}></Route>
 				<Route path='/' element={<HomePage />}></Route>
 				<Route path='/browse' element={<Browse />}></Route>
 				<Route path='/user' element={<UserPage />}></Route>
 				<Route path='/user/followers' element={<UserPageFollowers />}></Route>
 				<Route path='/user/following' element={<UserPageFollowing />}></Route>
 				<Route path='/user/recipes' element={<UserPageRecipes />}></Route>
+				<Route path='/user/recipes/liked' element={<UserPageLikedRecipes />}></Route>
+				<Route path='/user/recipes/saved' element={<UserPageSavedRecipes />}></Route>
 				<Route path='/user/recipes/add' element={<UserPageAddRecipe />}></Route>
 				<Route path='/user/reviews' element={<UserPageReviews />}></Route>
 				<Route path='/login' element={<LoginPage />}></Route>

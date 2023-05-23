@@ -3,12 +3,12 @@ import FollowerBox from './FollowerBox';
 import LoadMoreButton from './LoadMoreButton';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const UserPageFollowerTab = () => {
+const UserPageFollowersTab = () => {
 	const [followers, setFollowers] = useState([]);
 	const user = JSON.parse(sessionStorage.getItem('user'));
 	const userId = user.id;
 	useEffect(() => {
-		axios.get(`http://localhost:4000/api/user/${userId}/followers`).then(res => {
+		axios.get(`http://localhost:4000/api/user/${userId}/following`).then(res => {
 			setFollowers(res.data);
 			console.log(res.data);
 		});
@@ -26,4 +26,4 @@ const UserPageFollowerTab = () => {
 	);
 };
 
-export default UserPageFollowerTab;
+export default UserPageFollowersTab;
