@@ -19,7 +19,7 @@ const Recipes = () => {
 	return (
 		<div className='mb-8 flex flex-wrap justify-around gap-10 space-x-8'>
 			{recipes &&
-				users &&
+				users.length>0 &&
 				recipes.map(recipe => (
 					<RecipePlaceholder
 						key={recipe.id}
