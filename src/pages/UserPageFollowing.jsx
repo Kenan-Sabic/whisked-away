@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import UserPageBanner from '../components/UserPageBanner';
 import UserPageFollowerTab from '../components/UserPageFollowerTab';

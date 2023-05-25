@@ -16,13 +16,14 @@ const Recipes = () => {
 			setUsers(response.data);
 		});
 	}, []);
+
 	return (
 		<div className='mb-8 flex flex-wrap justify-around gap-10 space-x-8'>
 			{recipes &&
-				users.length>0 &&
+				users.length > 0 &&
 				recipes.map(recipe => (
 					<RecipePlaceholder
-						key={recipe.id}
+						recipeId={recipe._id}
 						title={recipe.name}
 						imageSrc={'http://localhost:4000/images/recipe/' + recipe.image}
 						userName={users.find(user => user._id === recipe.author).name}
