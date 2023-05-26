@@ -11,7 +11,7 @@ const DailyRecipeModal = (props) => {
   };
 
   const popupRef = useRef(null);
-
+  
   function handleClickOutside(event) {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
       props.onHide();
