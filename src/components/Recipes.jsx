@@ -4,19 +4,7 @@ import krosan1 from '../assets/krosan1.jpg';
 import krosan3 from '../assets/krosan3.jpg';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const Recipes = () => {
-	const [recipes, setRecipes] = useState([]);
-	const [users, setUsers] = useState([]);
-	useEffect(() => {
-		axios.get('http://localhost:4000/api/recipe').then(response => {
-			setRecipes(response.data);
-		});
-		//get all users
-		axios.get('http://localhost:4000/api/user').then(response => {
-			setUsers(response.data);
-		});
-	}, []);
-
+const Recipes = ({ recipes, users }) => {
 	return (
 		<div className='mb-8 flex flex-wrap justify-around gap-10 space-x-8'>
 			{recipes &&
