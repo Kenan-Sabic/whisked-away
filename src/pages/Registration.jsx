@@ -32,8 +32,8 @@ const Registration = () => {
 	return (
 		<div>
 			<Navbar />
-			<div className='grid min-h-screen w-full grid-cols-11 bg-jet bg-cover pt-20 md:bg-spices'>
-				<div className='h-7/8 col-start-5 col-end-8 mb-auto mt-auto rounded-3xl bg-white'>
+			<div className='grid min-h-screen w-full grid-cols-12 bg-jet bg-cover pt-20 md:bg-spices'>
+				<div className='h-7/8 col-start-2 col-end-12 md:col-start-3 md:col-end-11 lg:col-start-5 lg:col-end-9 mb-auto mt-auto rounded-3xl bg-white'>
 					<div className=' mb-0 h-full w-full rounded-3xl '>
 						<form
 							action='#'
@@ -101,12 +101,15 @@ const Registration = () => {
 									className='h-12 w-full rounded bg-gray-200 p-3 text-lg'
 								/>
 							</div>
+                            <div className='w-[240px] my-1'>
 
-							<input type='file' name='image' id='file' onChange={e => setImage(e.target.files[0])} />
-
+                            <label className='w-full text-left text-2xl' htmlFor="file">Profile picture</label>
+							<input className='m-1 p-2' type='file' name='image' id='file' onChange={e => setImage(e.target.files[0])} />
+                            </div>
 							<input
 								type='submit'
 								className='mb-4 w-64 cursor-pointer rounded bg-sandybrown p-3.5 text-3xl font-bold text-jet'
+                                value="Register"
 							/>
 							<p>Already have an account?</p>
 							<a href='../login' className='w-36 p-2 text-center text-3xl text-sandybrown'>

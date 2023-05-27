@@ -32,8 +32,8 @@ const LoginPage = () => {
 	return (
 		<div>
 			<Navbar />
-			<div className='grid min-h-screen w-full grid-cols-11 bg-jet bg-cover pt-20 md:bg-spices'>
-				<div className='col-start-5 col-end-8 mb-auto mt-auto h-3/4 rounded-3xl bg-white'>
+			<div className='grid min-h-screen w-full grid-cols-12 bg-jet bg-cover pt-20 md:bg-spices'>
+				<div className='col-start-2 col-end-12 md:col-start-3 md:col-end-11 lg:col-start-5 lg:col-end-9 mb-auto mt-auto h-3/4 rounded-3xl bg-white'>
 					<div className=' mb-0 h-full w-full rounded-3xl '>
 						<form
 							onSubmit={handleSubmit}
