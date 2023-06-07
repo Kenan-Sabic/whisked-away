@@ -6,6 +6,8 @@ import UserPageRecipeTab from '../components/UserPageRecipeTab';
 import Footer from '../components/Footer';
 import ViewUserPageBanner from '../components/ViewUserPageBanner';
 import axios from 'axios';
+import ViewBio from '../components/ViewBio';
+import ViewRecipes from '../components/ViewRecipes';
 const ViewUser = () => {
 	const [viewUserData, setViewUserData] = useState({});
 	//function that gets the id in the url
@@ -29,17 +31,16 @@ const ViewUser = () => {
 		getUserData().then(data => {
 			setViewUserData(data);
 		});
-		console.log(viewUserData);
 	}, []);
 	return (
 		<div className='bg-neutral-100'>
 			<Navbar />
 			<div className='bg-spices bg-cover pt-80'>
-				<ViewUserPageBanner username={viewUserData.name} image={viewUserData.image} id={viewUserData._id} />
+				<ViewUserPageBanner username={viewUserData.name} image={viewUserData.image} />
 			</div>
 			<div className='w-full md:grid md:grid-cols-10'>
 				<div className=' flex w-full flex-col items-center rounded-md text-center md:col-start-1 md:col-end-4 md:mt-[-170px]'>
-					<UserPageBio />
+					<ViewBio user={viewUserData} />
 				</div>
 				<div className='mb-5  flex w-full flex-col items-center rounded-md border border-dashed border-sandybrown bg-neutral-50 text-center shadow-2xl md:col-start-4 md:col-end-11 md:mt-[-170px]'>
 					<div className='mt-8 grid w-full grid-cols-2 gap-x-4 gap-y-4 rounded-lg p-6 md:grid-cols-4 md:gap-x-6'>
@@ -54,7 +55,7 @@ const ViewUser = () => {
 					</div>
 
 					<div className='mb-10 w-full bg-neutral-50'>
-						<UserPageRecipeTab />
+						<ViewRecipes name={viewUserData.name} />
 					</div>
 				</div>
 			</div>

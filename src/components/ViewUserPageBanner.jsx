@@ -4,11 +4,17 @@ import { useState } from 'react';
 import axios from 'axios';
 import Logout from '../components/Logout';
 import ViewUser from '../pages/ViewUser';
-const ViewUserPageBanner = ({ username, image, id }) => {
+import { useEffect } from 'react';
+const ViewUserPageBanner = ({ username, image }) => {
 	const user = JSON.parse(sessionStorage.getItem('user'));
 	const token = sessionStorage.getItem('token');
 	const followingList = user.following;
 	const userId = user.id;
+
+	const url = window.location.href;
+	const urlArray = url.split('/');
+	const id = urlArray[urlArray.length - 1];
+
 	const [isFollowing, setIsFollowing] = useState(followingList.includes(id));
 	const imageVar = 'http://localhost:4000/images/profile/' + image;
 

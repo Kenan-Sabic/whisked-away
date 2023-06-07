@@ -18,7 +18,7 @@ const Recipes = ({ recipes, users }) => {
 						instructions={recipe.instructions}
 						ingredients={recipe.ingredients}
 						imageSrc={'http://localhost:4000/images/recipe/' + recipe.image}
-						userName={users.find(user => user._id === recipe.author).name}
+						userName={users.find(user => user._id === recipe.author)}
 					/>
 				))}
 		</div>

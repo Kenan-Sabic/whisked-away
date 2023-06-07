@@ -72,7 +72,13 @@ const RecipePlaceholder = ({ title, userName, imageSrc, serves, recipeId, cookTi
 					<img src={imageSrc} className='h-[190px] w-full rounded-2xl object-cover' alt='Recipe' />
 					<h2 className='mt-2 cursor-pointer text-center text-2xl font-normal'>{title}</h2>
 					<h3 className='text-center text-lg font-light'>
-						Posted by: <a className='cursor-pointer underline'>{userName}</a>
+						Posted by:{' '}
+						<a
+							className='cursor-pointer underline'
+							onClick={() => (window.location.href = `/user/view/${userName._id}`)}
+						>
+							{userName.name}
+						</a>
 					</h3>
 					<div className='mt-4 flex items-center justify-center'>
 						<button
