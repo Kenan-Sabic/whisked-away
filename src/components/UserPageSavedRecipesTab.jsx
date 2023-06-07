@@ -11,17 +11,24 @@ import plusSymbol from '../assets/plusSymbol.svg';
 import { useState } from 'react';
 import axios from 'axios';
 
-const UserPageRecipeTab = () => {
+const UserPageSavedRecipesTab = () => {
 	const [recipes, setRecipes] = useState();
-	const [users, setUsers] = useState();
 	const user = JSON.parse(sessionStorage.getItem('user'));
 	const userId = user.id;
+	const [users, setUsers] = useState();
 	//fetch recipes with axios
 	useEffect(() => {
-		axios.get(`http://localhost:4000/api/user/${userId}/recipes`).then(res => {
-			setRecipes(res.data);
-			console.log(res.data);
-		});
+		//get liked recipes with axios and set bearer token
+		axios
+			.get(`http://localhost:4000/api/user/${userId}/savedRecipes`, {
+				headers: {
+					Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+				},
+			})
+			.then(res => {
+				setRecipes(res.data);
+				console.log(res.data);
+			});
 		// get all users
 		axios.get(`http://localhost:4000/api/user`).then(res => {
 			setUsers(res.data);
@@ -33,7 +40,12 @@ const UserPageRecipeTab = () => {
 		<div className='px-6'>
 			<div>
 				<div className='grid grid-cols-2 gap-x-4 gap-y-4 p-6 md:grid-cols-11'>
-					<div className='flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 bg-sandybrown text-center font-bold shadow-lg hover:text-white md:col-span-3'>
+					<div
+						onClick={() => {
+							window.location.href = '/user/recipes';
+						}}
+						className='flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-3'
+					>
 						<h1>Your Recipes</h1>
 					</div>
 					<div
@@ -44,10 +56,7 @@ const UserPageRecipeTab = () => {
 					>
 						<h1>Your Favorites</h1>
 					</div>
-					<div
-						onClick={() => (window.location.href = '/user/recipes/saved')}
-						className='col-span-2 flex  h-14 min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-3'
-					>
+					<div className='col-span-2 flex  h-14 min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 bg-sandybrown text-center font-bold shadow-lg hover:text-white md:col-span-3'>
 						<h1>Saved Recipes</h1>
 					</div>
 					<div
@@ -82,4 +91,4 @@ const UserPageRecipeTab = () => {
 	);
 };
 
-export default UserPageRecipeTab;
+export default UserPageSavedRecipesTab;

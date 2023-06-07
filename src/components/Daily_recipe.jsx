@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import Slider from "react-slick";
@@ -29,23 +29,15 @@ const Daily_Recipe = () => {
     setShowModal(false);
   };
 
-  const handleButtonClick = () => {
-    const calculatorWindow = window.open("", "", "width=800,height=400");
-    calculatorWindow.document.write(`
-      <!DOCTYPE html>
-        <html>
-        <head>
-          <title>My New Window</title>
-          <link href="/src/index.css" rel="stylesheet">
-        </head>
-        <body>
-          <h1>Hello World</h1>
-          <p>This is a new window!</p>
-        </body>
-      </html>
-  `);
-    ReactDOM.render(<Calculator />, calculatorWindow.document.body);
-  };
+  
+  const handleClick = () => {
+		if (!token) {
+			window.location.href = '/login';
+		} else {
+			window.location.href = '/user/recipes/add';
+		}
+	};
+	const token = sessionStorage.getItem('token'); 
 
   return (
     <div className="flex flex-col items-center">
@@ -107,10 +99,16 @@ const Daily_Recipe = () => {
       )}
 
       <div>
-        <FixedButton buttonText="Calculator" onClick={handleButtonClick} />
+      <button
+      onClick={handleClick}
+      className="fixed bottom-0 right-0 p-4 bg-sandybrown text-white rounded-full z-50"
+    >
+      {!token ? 'Add your recipe' : 'Add your recipe'}
+    </button>
       </div>
     </div>
   );
-};
+}
+;
 
 export default Daily_Recipe;
