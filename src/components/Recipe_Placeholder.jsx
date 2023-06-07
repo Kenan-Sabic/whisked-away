@@ -3,8 +3,18 @@ import heart from '../assets/heart.png';
 import bookmark from '../assets/bookmark.png';
 import axios from 'axios';
 import html2pdf from 'html2pdf.js';
-
-const RecipePlaceholder = ({ title, userName, imageSrc, serves, recipeId, cookTime, instructions, ingredients }) => {
+import DailyRecipeModal from './DailyRecipeModalPlaceholder';
+const RecipePlaceholder = ({
+	title,
+	userName,
+	imageSrc,
+	serves,
+	recipeId,
+	cookTime,
+	instructions,
+	ingredients,
+	handleShowModal,
+}) => {
 	const user = JSON.parse(sessionStorage.getItem('user'));
 	const token = sessionStorage.getItem('token');
 
@@ -64,7 +74,6 @@ const RecipePlaceholder = ({ title, userName, imageSrc, serves, recipeId, cookTi
 	const delay = ms => {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	};
-
 	return (
 		<div className='card mt-8'>
 			<div className={`flip-card ${isFlipped ? 'flip' : ''}`}>
@@ -83,7 +92,7 @@ const RecipePlaceholder = ({ title, userName, imageSrc, serves, recipeId, cookTi
 					<div className='mt-4 flex items-center justify-center'>
 						<button
 							className='rounded bg-neutral-400 px-4 py-2 font-bold text-white hover:text-black'
-							onClick={handleClick}
+							onClick={() => handleShowModal(recipeId)}
 						>
 							See the recipe
 						</button>
@@ -99,49 +108,6 @@ const RecipePlaceholder = ({ title, userName, imageSrc, serves, recipeId, cookTi
 						</div>
 						<div>
 							<img src={heart} onClick={handleLike} className='ml-65 w-43 h-43 mr-2 mt-6 cursor-pointer' alt='Heart' />
-						</div>
-					</div>
-				</div>
-				<div className='back h-96 w-80 rounded-xl bg-gray-200 shadow-xl shadow-neutral-800' ref={divRef}>
-					<div className='h-96 overflow-auto px-4 py-4'>
-						<h2 className='text-xl font-extrabold font-medium leading-6 text-gray-900'>{title}</h2>
-						<div className='mt-2 text-center sm:text-left'>
-							<p className='text-sm text-gray-800'>Serves: {serves}</p>
-							<p className='text-sm text-gray-800'>Cook Time: {cookTime}</p>
-						</div>
-						{ingredients && typeof ingredients === 'string' && (
-							<div className='mt-5 text-center sm:text-justify'>
-								<h4 className='text-md font-extrabold font-medium leading-5 text-gray-900'>Ingredients</h4>
-								{ingredients.split('\n').map((ingredient, index) => (
-									<span key={index} className='mt-2 block break-words text-sm'>
-										{ingredient}
-									</span>
-								))}
-							</div>
-						)}
-						{instructions && typeof instructions === 'string' && (
-							<div className='mt-5 text-center sm:text-justify'>
-								<h4 className='text-md font-extrabold font-medium leading-5 text-gray-900'>Instructions</h4>
-								{instructions.split('\n').map((instruction, index) => (
-									<span key={index} className='mt-2 block break-words text-sm'>
-										{instruction}
-									</span>
-								))}
-							</div>
-						)}
-						<div className='mt-4 flex flex-col items-center justify-center gap-3'>
-							<button
-								onClick={handleDownloadPDF}
-								className='rounded bg-neutral-400 px-4 py-2 font-bold text-white hover:text-black'
-							>
-								Download
-							</button>
-							<button
-								onClick={() => setIsFlipped(!isFlipped)}
-								className='rounded bg-neutral-400 px-4 py-2 font-bold text-white hover:text-black'
-							>
-								Cancel
-							</button>
 						</div>
 					</div>
 				</div>
