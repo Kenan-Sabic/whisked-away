@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const PasswordReset = () => {
+const ForgotPassword = () => {
   const [email, setEmail] = useState('');
 
   const handleFormSubmit = async (e) => {
@@ -52,4 +52,4 @@ const PasswordReset = () => {
   );
 };
 
-export default PasswordReset;
+export default ForgotPassword;
