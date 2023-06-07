@@ -17,6 +17,7 @@ import UserPageLikedRecipes from './pages/UserPageLikedRecipes';
 import UserPageSavedRecipes from './pages/UserPageSavedRecipes';
 import ImageTest from './pages/ImageTest';
 import ViewUser from './pages/ViewUser';
+import PasswordReset from './pages/PasswordReset';
 function App() {
 	return (
 		<div>
@@ -34,6 +35,7 @@ function App() {
 				<Route path='/user/view/:id' element={<ViewUser />}></Route>
 				<Route path='/login' element={<LoginPage />}></Route>
 				<Route path='/register' element={<Registration />}></Route>
+                <Route path='/passwordreset' element={<PasswordReset />}></Route>
 			</Routes>
 		</div>
 	);
