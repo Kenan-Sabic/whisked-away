@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import axios from 'axios';
+//comment to fix weird git issue that caused a regression
 
 const LoginPage = () => {
 	const [email, setEmail] = useState('');
