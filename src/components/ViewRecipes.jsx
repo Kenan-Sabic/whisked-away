@@ -39,6 +39,10 @@ const ViewRecipes = ({ name }) => {
 							name={recipe.name}
 							author={name}
 							image={recipe.image}
+							serves={recipe.serves}
+							cookTime={recipe.cookTime}
+							ingredients={recipe.ingredients}
+							instructions={recipe.instructions}
 						/>
 					))
 				) : (
