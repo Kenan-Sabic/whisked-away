@@ -13,8 +13,12 @@ const Recipes = ({ recipes, users }) => {
 					<RecipePlaceholder
 						recipeId={recipe._id}
 						title={recipe.name}
+						serves={recipe.serves}
+						cookTime={recipe.cookTime}
+						instructions={recipe.instructions}
+						ingredients={recipe.ingredients}
 						imageSrc={'http://localhost:4000/images/recipe/' + recipe.image}
-						userName={users.find(user => user._id === recipe.author).name}
+						userName={users.find(user => user._id === recipe.author)}
 					/>
 				))}
 		</div>
