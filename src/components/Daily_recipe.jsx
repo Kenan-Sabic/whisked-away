@@ -101,7 +101,7 @@ const Daily_Recipe = () => {
       <div>
       <button
       onClick={handleClick}
-      className="fixed bottom-0 right-0 p-4 bg-sandybrown text-white rounded-full z-50"
+      className="fixed bottom-2 right-2 shadow-lg p-4 bg-sandybrown text-white rounded-full z-50"
     >
       {!token ? 'Add your recipe' : 'Add your recipe'}
     </button>
