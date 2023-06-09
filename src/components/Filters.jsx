@@ -24,7 +24,7 @@ const Filters = ({ handleFilter, filters, removeFilter }) => {
 						</div>
 					))}
 
-				<div className='h-[2px] w-96 w-full rounded bg-gray-200 md:mr-4'></div>
+				<div className='h-[2px] w-96  rounded bg-gray-200 md:mr-4'></div>
 
 				<div className='addFilter md:ml-12'>
 					<form
@@ -34,7 +34,7 @@ const Filters = ({ handleFilter, filters, removeFilter }) => {
 						}}
 					>
 						<input
-							className='placeholder-center w-full rounded-lg rounded-lg bg-gray-200 px-4 py-2  pl-4 text-center text-xl'
+							className='placeholder-center w-full rounded-lg  bg-gray-200 px-4 py-2  pl-4 text-center text-xl'
 							type='text'
 							placeholder='Add filter'
 							value={newFilter}
