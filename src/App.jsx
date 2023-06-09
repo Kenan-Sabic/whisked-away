@@ -13,6 +13,7 @@ import UserPageFollowing from "./pages/UserPageFollowing";
 import UserPageRecipes from "./pages/UserPageRecipes";
 import UserPageReviews from "./pages/UserPageReviews";
 import UserPageAddRecipe from "./pages/UserPageAddRecipe";
+import EditUserProfile from "./pages/EditUserProfile";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/user/recipes" element={<UserPageRecipes />}></Route>
         <Route path="/user/recipes/add" element={<UserPageAddRecipe />}></Route>
         <Route path="/user/reviews" element={<UserPageReviews />}></Route>
+        <Route path="/user/edit" element={<EditUserProfile/>}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/register" element={<Registration />}></Route>
       </Routes>
