@@ -32,8 +32,8 @@ function App() {
 				<Route path='/user/reviews' element={<UserPageReviews />}></Route>
 				<Route path='/login' element={<LoginPage />}></Route>
 				<Route path='/register' element={<Registration />}></Route>
-                <Route path='/forgotPassword' element={<ForgotPassword />}></Route>
-                <Route path='/resetPassword' element={<ResetPassword/>}></Route>
+                <Route path='/forgot-password' element={<ForgotPassword />}></Route>
+                <Route path='/reset-password' element={<ResetPassword/>}></Route>
 			</Routes>
 		</div>
 	);
