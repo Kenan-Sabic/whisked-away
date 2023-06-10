@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -22,6 +22,6 @@ export default {
         // whisk icon credits https://www.flaticon.com/free-icons/churn  icons created by Ainul Muttakin
       },
     },
-    plugins: [],
+    plugins: [require('flowbite/plugin')],
   },
 };
