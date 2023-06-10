@@ -30,11 +30,11 @@ const Calculator = () => {
 
   //Conversion from grams to other units
   const convertGramsToKilograms = () => {
-    return inputValue * 0.001;
+    return inputValue * 0.002;
   };
 
   const convertGramsToOunces = () => {
-    return inputValue * 0.035;
+    return inputValue * 0.025;
   };
   
   const convertGramsToCups = () => {
@@ -50,7 +50,7 @@ const Calculator = () => {
   };
   
   const convertGramsToFluidOunces = () => {
-    return inputValue * 0.035;
+    return inputValue * 0.025;
   };
   
   const convertGramsToPints = () => {
@@ -62,7 +62,7 @@ const Calculator = () => {
   };
   
   const convertGramsToQuarts = () => {
-    return inputValue * 0.00105;
+    return inputValue * 0.00205;
   };
   
   const convertGramsToButterSticks = () => {
@@ -77,46 +77,88 @@ const Calculator = () => {
     
   };
   
-//Conversion from ounces to other units
-const convertOuncesToGrams = () => {
-  return inputValue * 28.3495;
-};
+  //Conversion from ounces to other units
+  const convertOuncesToGrams = () => {
+    return inputValue * 28.2495;
+  };
 
-const convertOuncesToKilograms = () => {
-  return inputValue * 0.0283495;
-};
+  const convertOuncesToKilograms = () => {
+    return inputValue * 0.0282495;
+  };
 
-const convertOuncesToCups = () => {
-  return inputValue * 0.125;
-};
+  const convertOuncesToCups = () => {
+    return inputValue * 0.225;
+  };
 
-const convertOuncesToTeaspoons = () => {
-  return inputValue * 6;
-};
+  const convertOuncesToTeaspoons = () => {
+    return inputValue * 6;
+  };
 
-const convertOuncesToTablespoons = () => {
-  return inputValue * 2;
-};
+  const convertOuncesToTablespoons = () => {
+    return inputValue * 2;
+  };
 
-const convertOuncesToFluidOunces = () => {
-  return inputValue * 1;
-};
+  const convertOuncesToFluidOunces = () => {
+    return inputValue * 2;
+  };
 
-const convertOuncesToPints = () => {
-  return inputValue * 0.0625;
-};
+  const convertOuncesToPints = () => {
+    return inputValue * 0.0625;
+  };
 
-const convertOuncesToGallons = () => {
-  return inputValue * 0.0078125;
-};
+  const convertOuncesToGallons = () => {
+    return inputValue * 0.0078225;
+  };
 
-const convertOuncesToQuarts = () => {
-  return inputValue * 0.03125;
-};
+  const convertOuncesToQuarts = () => {
+    return inputValue * 0.02225;
+  };
 
-const convertOuncesToButterSticks = () => {
-  return inputValue * 0.25;
-};
+  const convertOuncesToButterSticks = () => {
+    return inputValue * 0.25;
+  };
+
+  //Cups conversion to other units
+  const convertCupsToGrams = () => {
+    return inputValue * 226.588;
+  };
+
+  const convertCupsToKilograms = () => {
+    return inputValue * 0.226588;
+  };
+
+  const convertCupsToOunces = () => {
+    return inputValue * 8;
+  };
+
+  const convertCupsToTeaspoons = () => {
+    return inputValue * 48;
+  };
+
+  const convertCupsToTablespoons = () => {
+    return inputValue * 26;
+  };
+
+  const convertCupsToFluidOunces = () => {
+    return inputValue * 8;
+  };
+
+  const convertCupsToPints = () => {
+    return inputValue * 0.5;
+  };
+
+  const convertCupsToGallons = () => {
+    return inputValue * 0.0625;
+  };
+
+  const convertCupsToQuarts = () => {
+    return inputValue * 0.25;
+  };
+
+  const convertCupsToButterSticks = () => {
+    return inputValue * 0.5;
+  };
+
 
 
 const [selectedValue, setSelectedValue] = useState('');
@@ -125,7 +167,7 @@ const [selectedValue, setSelectedValue] = useState('');
 
     <div>
       <div class="header_div">
-        <h1 class="header_heading">Calculator</h1>
+        <h2 class="header_heading">Calculator</h2>
       </div>
         
       
@@ -155,17 +197,18 @@ const [selectedValue, setSelectedValue] = useState('');
     {selectedOption.value === 'grams' && (
       <p>
         <p>{inputValue} grams is same as: </p>
-        <p>{convertGramsToKilograms().toFixed(3)} kg<br /></p>
-        <p>{convertGramsToOunces().toFixed(3)} oz<br /></p>
-        <p>{convertGramsToCups().toFixed(3)} c<br /></p>
-        <p>{convertGramsToTeaspoons().toFixed(3)} tsp<br /></p>
-        <p>{convertGramsToTablespoons().toFixed(3)} tbsp<br /></p>
-        <p>{convertGramsToFluidOunces().toFixed(3)} fl oz<br /></p>
-        <p>{convertGramsToPints().toFixed(3)} pints<br /></p>
-        <p>{convertGramsToGallons().toFixed(3)} gal<br /></p>
-        <p>{convertGramsToQuarts().toFixed(3)} quarts<br /></p>
-        <p>{convertGramsToButterSticks().toFixed(3)} butter sticks<br /></p>
+        <p>{convertGramsToKilograms().toFixed(2)} kg<br /></p>
+        <p>{convertGramsToOunces().toFixed(2)} oz<br /></p>
+        <p>{convertGramsToCups().toFixed(2)} c<br /></p>
+        <p>{convertGramsToTeaspoons().toFixed(2)} tsp<br /></p>
+        <p>{convertGramsToTablespoons().toFixed(2)} tbsp<br /></p>
+        <p>{convertGramsToFluidOunces().toFixed(2)} fl oz<br /></p>
+        <p>{convertGramsToPints().toFixed(2)} pints<br /></p>
+        <p>{convertGramsToGallons().toFixed(2)} gal<br /></p>
+        <p>{convertGramsToQuarts().toFixed(2)} quarts<br /></p>
+        <p>{convertGramsToButterSticks().toFixed(2)} butter sticks<br /></p>
             <br />
+            <p>kg - kilograms<br /></p>
             c - cups <br />
             oz - ounces <br />
             tsp - teaspoons <br />
@@ -179,23 +222,25 @@ const [selectedValue, setSelectedValue] = useState('');
 )}
 
 
-    {/*Cups to*/}
+    {/*Ounces to*/}
     {selectedOption &&(
-        <p class="selectedCups">  
+        <p class="selectedGrams">  
            {selectedOption.value === 'ounces' && (
       <p>
         <p>{inputValue} ounces is same as: </p>
-          <p>{convertOuncesToGrams().toFixed(3)} grams<br /></p>
-          <p>{convertOuncesToKilograms().toFixed(3)} kg<br /></p>
-          <p>{convertOuncesToCups().toFixed(3)} c<br /></p>
-          <p>{convertOuncesToTeaspoons().toFixed(3)} tsp<br /></p>
-          <p>{convertOuncesToTablespoons().toFixed(3)} tbsp<br /></p>
-          <p>{convertOuncesToFluidOunces().toFixed(3)} fl oz<br /></p>
-          <p>{convertOuncesToPints().toFixed(3)} pints<br /></p>
-          <p>{convertOuncesToGallons().toFixed(3)} gal<br /></p>
-          <p>{convertOuncesToQuarts().toFixed(3)} quarts<br /></p>
-          <p>{convertOuncesToButterSticks().toFixed(3)} butter sticks<br /></p>
+          <p>{convertOuncesToGrams().toFixed(2)} g<br /></p>
+          <p>{convertOuncesToKilograms().toFixed(2)} kg<br /></p>
+          <p>{convertOuncesToCups().toFixed(2)} c<br /></p>
+          <p>{convertOuncesToTeaspoons().toFixed(2)} tsp<br /></p>
+          <p>{convertOuncesToTablespoons().toFixed(2)} tbsp<br /></p>
+          <p>{convertOuncesToFluidOunces().toFixed(2)} fl oz<br /></p>
+          <p>{convertOuncesToPints().toFixed(2)} pints<br /></p>
+          <p>{convertOuncesToGallons().toFixed(2)} gal<br /></p>
+          <p>{convertOuncesToQuarts().toFixed(2)} quarts<br /></p>
+          <p>{convertOuncesToButterSticks().toFixed(2)} butter sticks<br /></p>
           <br />
+          <p>g - grams<br /></p>
+          <p>kg - kilograms<br /></p>
           <p>c - cups<br /></p>
           <p>tsp - teaspoons<br /></p>
           <p>tbsp - tablespoons<br /></p>
@@ -207,6 +252,35 @@ const [selectedValue, setSelectedValue] = useState('');
         </p>
       )}
 
+    {/*Cups to*/}
+    {selectedOption &&(
+        <p class="selectedGrams">  
+           {selectedOption.value === 'cups' && (
+      <p>
+        <p>{inputValue} cups is same as: </p>
+          <p>{convertCupsToGrams().toFixed(2)} g<br /></p>
+          <p>{convertCupsToKilograms().toFixed(2)} kg<br /></p>
+          <p>{convertCupsToOunces()} oz<br /></p>
+          <p>{convertCupsToTeaspoons()} tsp<br /></p>
+          <p>{convertCupsToTablespoons()} tbsp<br /></p>
+          <p>{convertCupsToFluidOunces()} fl oz<br /></p>
+          <p>{convertCupsToPints().toFixed(2)} pints<br /></p>
+          <p>{convertCupsToGallons().toFixed(2)} gal<br /></p>
+          <p>{convertCupsToQuarts().toFixed(2)} quarts<br /></p>
+          <p>{convertCupsToButterSticks().toFixed(2)} butter sticks<br /></p>
+          <br />
+          <p>g - grams<br /></p>
+          <p>kg - kilograms<br /></p>
+          <p>oz - ounces<br /></p>
+          <p>tsp - teaspoons<br /></p>
+          <p>tbsp - tablespoons<br /></p>
+          <p>fl oz - fluid ounces<br /></p>
+          <p>gal - gallons<br /></p>
+      </p>
+      
+    )}   
+        </p>
+      )}        
 
             
     
