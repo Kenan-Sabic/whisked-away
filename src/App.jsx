@@ -35,7 +35,7 @@ function App() {
 				<Route path='/user/view/:id' element={<ViewUser />}></Route>
 				<Route path='/login' element={<LoginPage />}></Route>
 				<Route path='/register' element={<Registration />}></Route>
-                <Route path='/passwordreset' element={<PasswordReset />}></Route>
+				<Route path='/passwordreset' element={<PasswordReset />}></Route>
 			</Routes>
 		</div>
 	);
