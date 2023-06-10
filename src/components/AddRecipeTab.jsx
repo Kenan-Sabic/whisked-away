@@ -97,9 +97,9 @@ const AddRecipeTab = () => {
           <div className="grid grid-cols-2 gap-x-4 gap-y-4 p-6 md:gap-x-6 md:grid-cols-11">
             <div className="flex h-14 cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-3">
               <h1
-                onClick={() => {
-                  window.location.href = "/user/recipes";
-                }}
+                  onClick={() => {
+                    window.location.href = "/user/recipes";
+                  }}
               >
                 Your Recipes
               </h1>

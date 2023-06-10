@@ -12,7 +12,11 @@ const UserPageBanner = () => {
       <div className="text-center">
         <h1 className="mt-10 text-5xl md:ml-10">Faris Hadžiabdić</h1>
       </div>
-      <div className="mt-10 flex max-h-[80px] max-w-[300px] cursor-pointer items-center rounded-md bg-lightorange p-4 px-16 font-bold shadow-md md:ml-[100px] md:mr-[150px]">
+      <div className="mt-10 flex max-h-[80px] max-w-[300px] cursor-pointer items-center rounded-md bg-lightorange p-4 px-16 font-bold shadow-md md:ml-[100px] md:mr-[150px]"
+      onClick={() => {
+        window.location.href = "/user/edit";
+      }}
+      >
         <h1>Edit Profile</h1>
       </div>
     </div>
