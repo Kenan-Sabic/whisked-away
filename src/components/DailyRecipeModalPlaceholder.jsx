@@ -15,31 +15,31 @@ const DailyRecipeModal = ({
 	image,
 	onHide,
 	imageSrc,
-  }) => {
+}) => {
 	const generatePDF = () => {
-	  const doc = new jsPDF();
-  
-	  doc.setFontSize(16);
-	  doc.text(`Recipe - ${title}`, 10, 10);
-  
-	  const tableData = [
-		['Serves', serves],
-		['Cook Time', cookTime],
-		['Ingredients', ingredients],
-		['Instructions', instructions],
-	  ];
-  
-	  doc.autoTable({
-		startY: 30,
-		head: [['Property', 'Value']],
-		body: tableData,
-	  });
-  
-	  doc.save('recipe.pdf');
+		const doc = new jsPDF();
+
+		doc.setFontSize(16);
+		doc.text(`Recipe - ${title}`, 10, 10);
+
+		const tableData = [
+			['Serves', serves],
+			['Cook Time', cookTime],
+			['Ingredients', ingredients],
+			['Instructions', instructions],
+		];
+
+		doc.autoTable({
+			startY: 30,
+			head: [['Property', 'Value']],
+			body: tableData,
+		});
+
+		doc.save('recipe.pdf');
 	};
-  
+
 	const handleDownload = () => {
-	  generatePDF();
+		generatePDF();
 	};
 	const [showModal, setShowModal] = useState(false);
 
@@ -136,7 +136,7 @@ const DailyRecipeModal = ({
 								<div className='mt-5'></div>
 								<button
 									onClick={handleDownload}
-									className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray shadow-sm hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:text-sm"
+									className='text-gray inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium shadow-sm hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:text-sm'
 								>
 									Download PDF
 								</button>
@@ -145,7 +145,7 @@ const DailyRecipeModal = ({
 									onClick={() => {
 										handleCloseModal();
 									}}
-									className='inline-flex w-full justify-center rounded-md border border-gray-300 bg-neutral-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:text-white-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:text-sm'
+									className='hover:text-white-100 inline-flex w-full justify-center rounded-md border border-gray-300 bg-neutral-500 px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:text-sm'
 								>
 									Close
 								</button>

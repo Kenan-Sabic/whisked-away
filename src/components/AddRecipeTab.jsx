@@ -44,18 +44,23 @@ const AddRecipeTab = () => {
 	};
 	return (
 		<div>
-			<form onSubmit={handleSubmit} className='flex w-full flex-col items-center' encType='multipart/form-data'>
+			<form
+				onSubmit={handleSubmit}
+				className='flex w-full flex-col items-center font-Lato text-lg'
+				encType='multipart/form-data'
+			>
 				<label>Image</label>
 				<input
 					type='file'
-					className='text-sm text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-sandybrown file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-600'
+					className='mb-3 text-sm text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-sandybrown file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-600'
 					name='image'
 					id='file'
 					onChange={e => setImage(e.target.files[0])}
 				></input>
 				<label>Name</label>
 				<input
-					className='rounded-md border-2 border-gray-300'
+					placeholder='Recipe Name'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
 					type='text'
 					name='name'
 					value={name}
@@ -65,7 +70,8 @@ const AddRecipeTab = () => {
 				></input>
 				<label>Ingredients</label>
 				<input
-					className='rounded-md border-2 border-gray-300'
+					placeholder='eggs, flour,...'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
 					type='text'
 					name='ingredients'
 					value={ingredients}
@@ -75,7 +81,8 @@ const AddRecipeTab = () => {
 				></input>
 				<label>Serves</label>
 				<input
-					className='rounded-md border-2 border-gray-300'
+					placeholder='Serves'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
 					type='number'
 					name='serves'
 					value={serves}
@@ -85,7 +92,8 @@ const AddRecipeTab = () => {
 				></input>
 				<label>Tags</label>
 				<input
-					className='rounded-md border-2 border-gray-300'
+					placeholder='breakfast, dessert, ...'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
 					type='text'
 					name='tags'
 					value={tags}
@@ -95,7 +103,8 @@ const AddRecipeTab = () => {
 				></input>
 				<label>Cook Time (minutes)</label>
 				<input
-					className='rounded-md border-2 border-gray-300'
+					placeholder='Cook Time'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
 					type='number'
 					name='cookTime'
 					value={cookTime}
@@ -105,7 +114,8 @@ const AddRecipeTab = () => {
 				></input>
 				<label>Instructions</label>
 				<textarea
-					className='h-[200px] w-[400px] rounded-md border-2 border-gray-300'
+					placeholder='Instructions'
+					className='mb-3 h-[200px] w-[400px] rounded-md border-2 border-gray-300 p-3'
 					type='text'
 					name='instructions'
 					value={instructions}
@@ -113,7 +123,11 @@ const AddRecipeTab = () => {
 						setInstructions(e.target.value);
 					}}
 				/>
-				<button name='submit' type='submit' className='mt-3 h-[50px] w-[200px] bg-sandybrown hover:border'>
+				<button
+					name='submit'
+					type='submit'
+					className='mt-3 h-[50px] w-[200px] rounded-2xl bg-sandybrown text-lg text-white hover:border'
+				>
 					Create Recipe!
 				</button>
 			</form>
