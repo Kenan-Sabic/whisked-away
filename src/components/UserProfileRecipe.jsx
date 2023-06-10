@@ -6,7 +6,6 @@ import bookmark from '../assets/bookmark.png';
 import DailyRecipeModal from './DailyRecipeModalPlaceholder';
 const UserProfileRecipe = ({ image, name, author, likes, saves, serves, cookTime, ingredients, instructions }) => {
 	const [showModal, setShowModal] = useState(false);
-	const ingredientsString = ingredients.toString();
 	const handleOpenModal = () => {
 		setShowModal(true);
 	};
@@ -47,7 +46,7 @@ const UserProfileRecipe = ({ image, name, author, likes, saves, serves, cookTime
 					title={name}
 					serves={serves}
 					cookTime={cookTime}
-					ingredients={ingredientsString}
+					ingredients={ingredients.join('\n')}
 					instructions={instructions}
 					imageSrc={imageUrl}
 					handleCloseModal={handleCloseModal}

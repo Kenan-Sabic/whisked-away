@@ -24,15 +24,13 @@ const Daily_Recipe = () => {
 	const [ingredients, setIngredients] = useState('');
 	const [tags, setTags] = useState('');
 	useEffect(() => {
-		const getRecipes = async () => {
-			await axios.get('http://localhost:4000/api/recipe/646f9ab6fbb55f8455b0c3d4').then(res => {
-				setDailyRecipe(res.data);
-				res.data.ingredients.forEach(ingredient => {
-					setIngredients(ingredients + ingredient + ', ');
-				});
+		//get recipe of the day
+		axios.get('http://localhost:4000/api/recipe/646f9ab6fbb55f8455b0c3d4').then(res => {
+			setDailyRecipe(res.data);
+			res.data.ingredients.forEach(ingredient => {
+				setIngredients(ingredients + ingredient + ', ');
 			});
-		};
-		getRecipes();
+		});
 	}, []);
 
 	const [showModal, setShowModal] = React.useState(false);

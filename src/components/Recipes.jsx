@@ -16,7 +16,7 @@ const Recipes = ({ recipes, users }) => {
 	};
 
 	return (
-		<div className='mb-8 flex flex-wrap justify-around gap-10 space-x-8'>
+		<div className='mx-10 mb-8 flex flex-wrap justify-around gap-10 space-x-8'>
 			{recipes &&
 				users.length > 0 &&
 				recipes.map(recipe => (
