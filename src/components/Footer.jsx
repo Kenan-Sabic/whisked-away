@@ -23,7 +23,7 @@ function Footer() {
               <ul className="text-gray-400 leading-loose">
                 <li><a href="/">Home</a></li>
                 <li><a href="/browse">Browse</a></li>
-                <li><a href="/profile">Profile</a></li>
+                <li><a href="/user/recipes">Profile</a></li>
               </ul>
             </div>
             <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
