@@ -1,7 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import axios from 'axios';
 
 function Footer() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const handleSubscribe = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    //Add logic to send form data to backend for processing
+    axios
+      .post("http://localhost:4000/api/subscribe", { email })
+      .then((res) => {
+        //if bad request set error to error message
+        if (res.data.error) {
+          setSubmitSuccess(false);
+        }
+        //if good request set error to success message
+        else {
+          setSubmitSuccess(true);
+        }
+      });
+
+    console.log({email});
+    setSubmitSuccess(true);
+    setIsSubmitting(false);
+  };
+
   return (
     <>
       <div className="bg-sandybrown h-1"></div>
@@ -30,6 +60,8 @@ function Footer() {
               <h3 className="text-lg font-semibold text-gray-100 mb-4">Newsletter</h3>
               <ul className="text-gray-400 leading-loose">
               <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   placeholder="Enter your email"
                   className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
@@ -38,6 +70,7 @@ function Footer() {
               <div className="mt-4">
                 
                 <button
+                  onClick={handleSubscribe}
                   type="button"
                   className="bg-sandybrown text-white px-4 py-2 rounded-md hover:bg-orange-400 focus:outline-none focus:bg-orange-400"
                 >
