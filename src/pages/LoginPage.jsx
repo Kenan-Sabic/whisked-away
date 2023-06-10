@@ -68,7 +68,7 @@ const LoginPage = () => {
 								/>
 							</div>
 							<div className='mb-16 flex w-[240px] justify-center'>
-								<a href='' className='p-1 text-lg text-blue-600 underline'>
+								<a href='/PasswordReset' className='p-1 text-lg text-blue-600 underline'>
 									Forgot password?
 								</a>
 							</div>
