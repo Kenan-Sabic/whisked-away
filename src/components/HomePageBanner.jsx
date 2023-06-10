@@ -19,8 +19,8 @@ const HomePageBanner = () => {
         </h1>
         <button
           type="button"
-          className="z-[6] cursor-pointer rounded-md border-none bg-sandybrown px-5 py-[10px] text-base text-white transition-all
-        hover:px-[22px] hover:py-3 hover:text-lg"
+          className="z-[6] cursor-pointer rounded-md border-none bg-sandybrown px-5 py-[10px] text-lg text-white transition-all
+        hover:px-[30px] hover:py-3 hover:text-2xl"
           onClick={handleClick}
         >
           CLICK AND FIND A RECIPE FOR YOURSELF!

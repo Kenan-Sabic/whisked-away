@@ -83,6 +83,10 @@ const UserPageLikedRecipesTab = () => {
 							name={recipe.name}
 							author={users.find(user => user._id === recipe.author).name}
 							image={recipe.image}
+							ingredients={recipe.ingredients}
+							instructions={recipe.instructions}
+							serves={recipe.serves}
+							cookTime={recipe.cookTime}
 						/>
 					))
 				) : (

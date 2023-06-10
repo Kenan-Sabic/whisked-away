@@ -8,59 +8,59 @@ import Footer from '../components/Footer';
 import { useEffect } from 'react';
 import axios from 'axios';
 const Browse = () => {
-	const [filters, setMyFilters] = useState([]);
-
+	const [filters, setFilters] = useState([]);
+	const [search, setSearch] = useState('');
 	const [recipes, setRecipes] = useState([]);
 	const [users, setUsers] = useState([]);
+
 	useEffect(() => {
 		const getRecipesAndUsers = async () => {
-			axios.get('http://localhost:4000/api/recipe').then(response => {
-				setRecipes(response.data);
-			});
-			//get all users
-			axios.get('http://localhost:4000/api/user').then(response => {
-				setUsers(response.data);
-			});
+			const recipeResponse = await axios.get('http://localhost:4000/api/recipe');
+			setRecipes(recipeResponse.data);
+
+			const userResponse = await axios.get('http://localhost:4000/api/user');
+			setUsers(userResponse.data);
 		};
+
 		getRecipesAndUsers();
 	}, []);
 
-	//function that removes recipes from the list if they don't match the filters
 	const filterRecipes = () => {
-		//if there are no filters, return all recipes
-		if (filters.length === 0) {
+		if (filters.length === 0 && search === '') {
 			return recipes;
 		}
-		//otherwise, filter the recipes
-		else {
-			//create a new array to store the filtered recipes
-			let filteredRecipes = [];
-			//loop through all tags in the recipes
-			recipes.forEach(recipe => {
-				//loop through all filters
-				filters.forEach(filter => {
-					//if the recipe has the filter, add it to the filtered recipes
-					if (recipe.tags.includes(filter)) {
-						filteredRecipes.push(recipe);
-					}
-				});
-			});
-			//return the filtered recipes
-			return filteredRecipes;
-		}
+
+		let filteredRecipes = recipes.filter(recipe => {
+			let filterMatch = true;
+
+			if (filters.length > 0) {
+				filterMatch = filters.some(filter => recipe.tags.includes(filter));
+			}
+
+			const searchMatch = recipe.name.toLowerCase().includes(search.toLowerCase());
+
+			return filterMatch && searchMatch;
+		});
+
+		return filteredRecipes;
 	};
 
 	const addFilter = filter => {
-		setMyFilters([...filters, filter]);
+		setFilters(prevFilters => [...prevFilters, filter]);
 	};
+
 	const removeFilter = filter => {
-		setMyFilters(filters.filter(f => f !== filter));
+		setFilters(prevFilters => prevFilters.filter(f => f !== filter));
+	};
+
+	const handleSearch = search => {
+		setSearch(search);
 	};
 
 	return (
 		<div>
 			<Navbar />
-			<Browse_search />
+			<Browse_search handleSearch={handleSearch} />
 			<Filters handleFilter={addFilter} removeFilter={removeFilter} filters={filters} />
 			<Recipes recipes={filterRecipes()} users={users} />
 			<Footer />

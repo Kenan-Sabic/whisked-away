@@ -10,7 +10,10 @@ const FollowerBox = ({ user }) => {
 		}
 	}, [user.image]);
 	return (
-		<div className='row-auto mt-4 flex cursor-pointer flex-nowrap items-center gap-7 rounded px-10 hover:bg-sandybrown md:gap-4 lg:gap-6 xl:gap-7'>
+		<div
+			className='row-auto mt-4 flex cursor-pointer flex-nowrap items-center gap-7 rounded px-10 hover:bg-sandybrown md:gap-4 lg:gap-6 xl:gap-7'
+			onClick={() => (window.location.href = `/user/view/${user._id}`)}
+		>
 			<div className='flex h-[70px] w-[70px] items-center justify-center rounded-full bg-lightorange shadow-md'>
 				<img
 					src={image || userImgDefault}

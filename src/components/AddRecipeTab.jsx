@@ -1,51 +1,138 @@
-import React from "react";
-import plusSymbol from "../assets/plusSymbol.svg";
+import React, { useRef, useState, useEffect } from 'react';
+import plusSymbol from '../assets/plusSymbol.svg';
+import axios from 'axios';
 const AddRecipeTab = () => {
-  return (
-    <div>
-      <div className="px-6">
-        <div>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-4 p-6 md:grid-cols-11">
-            <div className="flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-3">
-              <h1
-                onClick={() => {
-                  window.location.href = "/user/recipes";
-                }}
-              >
-                Your Recipes
-              </h1>
-            </div>
-            <div className="flex h-14  min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-3">
-              <h1>Your Favorites</h1>
-            </div>
-            <div className="col-span-2 flex  h-14 min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-neutral-50 text-center font-bold shadow-lg hover:bg-sandybrown hover:text-white md:col-span-3">
-              <h1>Saved Recipes</h1>
-            </div>
-            <div
-              onClick={() => {
-                window.location.href = "/user/recipes/add";
-              }}
-              className="col-span-2 flex  h-14 min-w-[150px] cursor-pointer items-center justify-center rounded-lg bg-sandybrown text-center font-bold shadow-lg hover:text-jet md:col-span-2"
-            >
-              <img src={plusSymbol} className="h-[50%] w-[50%]" />
-            </div>
-          </div>
-          <div className="mt-8 w-full bg-neutral-100 md:grid md:grid-cols-12">
-            <div className="flex w-full flex-col items-center justify-center rounded-md bg-neutral-200 p-4 text-center shadow-md md:col-start-1 md:col-end-4">
-              <h1 className="text-3xl">Add Picture</h1>
-              <img src={plusSymbol} className="mt-5 h-[40%] w-[40%]" />
-            </div>
-            <div className="flex w-full flex-col items-center justify-center rounded-md bg-neutral-200 p-4 text-center shadow-md md:col-start-5 md:col-end-13">
-              <div className="flex w-full flex-row bg-neutral-200 p-4">
-                <h1 className="text-3xl">Serving size: </h1>
-                <div class=" h-auto w-[60%] rounded-md bg-neutral-200 text-center shadow-md"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	//form to create a recipe
+	const [name, setName] = useState('');
+	const [serves, setServes] = useState('');
+	const [ingredients, setIngredients] = useState('');
+	const [tags, setTags] = useState('');
+	const [cookTime, setCookTime] = useState(null);
+	const [instructions, setInstructions] = useState('');
+	const [image, setImage] = useState('');
+	const user = sessionStorage.getItem('user');
+	const userId = JSON.parse(user).id;
+	const handleSubmit = e => {
+		e.preventDefault();
+		//turn tags into array of strings
+		const tagsArray = tags.split(',');
+		const ingredientsArray = ingredients.split(',');
+		console.log(tagsArray);
+		const formData = new FormData();
+		formData.append('image', image);
+		formData.append('name', name);
+		formData.append('serves', serves);
+		formData.append('cookTime', cookTime);
+		formData.append('instructions', instructions);
+		formData.append('author', userId);
+		tagsArray.forEach(tag => {
+			formData.append('tags', tag);
+		});
+		ingredientsArray.forEach(ingredient => {
+			formData.append('ingredients', ingredient);
+		});
+		axios.post('http://localhost:4000/api/recipe', formData).then(res => {
+			//if bad request set error to error message
+			if (res.data.error) {
+				setDefaultResultOrder(res.data.error);
+			}
+			//if good request set error to success message
+			else {
+				window.location.href = '/user/recipes';
+			}
+		});
+	};
+	return (
+		<div>
+			<form
+				onSubmit={handleSubmit}
+				className='flex w-full flex-col items-center font-Lato text-lg'
+				encType='multipart/form-data'
+			>
+				<label>Image</label>
+				<input
+					type='file'
+					className='mb-3 text-sm text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-sandybrown file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-600'
+					name='image'
+					id='file'
+					onChange={e => setImage(e.target.files[0])}
+				></input>
+				<label>Name</label>
+				<input
+					placeholder='Recipe Name'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
+					type='text'
+					name='name'
+					value={name}
+					onChange={e => {
+						setName(e.target.value);
+					}}
+				></input>
+				<label>Ingredients</label>
+				<input
+					placeholder='eggs, flour,...'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
+					type='text'
+					name='ingredients'
+					value={ingredients}
+					onChange={e => {
+						setIngredients(e.target.value);
+					}}
+				></input>
+				<label>Serves</label>
+				<input
+					placeholder='Serves'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
+					type='number'
+					name='serves'
+					value={serves}
+					onChange={e => {
+						setServes(e.target.value);
+					}}
+				></input>
+				<label>Tags</label>
+				<input
+					placeholder='breakfast, dessert, ...'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
+					type='text'
+					name='tags'
+					value={tags}
+					onChange={e => {
+						setTags(e.target.value);
+					}}
+				></input>
+				<label>Cook Time (minutes)</label>
+				<input
+					placeholder='Cook Time'
+					className='mb-3 h-10 w-56 rounded-md border-2 border-gray-300 p-3'
+					type='number'
+					name='cookTime'
+					value={cookTime}
+					onChange={e => {
+						setCookTime(e.target.value);
+					}}
+				></input>
+				<label>Instructions</label>
+				<textarea
+					placeholder='Instructions'
+					className='mb-3 h-[200px] w-[400px] rounded-md border-2 border-gray-300 p-3'
+					type='text'
+					name='instructions'
+					value={instructions}
+					onChange={e => {
+						setInstructions(e.target.value);
+					}}
+				/>
+				<button
+					name='submit'
+					type='submit'
+					className='mt-3 h-[50px] w-[200px] rounded-2xl bg-sandybrown text-lg text-white hover:border'
+				>
+					Create Recipe!
+				</button>
+			</form>
+		</div>
+	);
 };
 
 export default AddRecipeTab;
