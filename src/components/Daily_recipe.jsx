@@ -31,6 +31,15 @@ const Daily_Recipe = () => {
     setShowModal(false);
   };
 
+  const handleToken = () => {
+		if (!token) {
+			window.location.href = '/login';
+		} else {
+			window.location.href = '/user/recipes/add';
+		}
+	};
+	const token = sessionStorage.getItem('token'); 
+
   const handleClick = () => {
     generatePDF();
   };
@@ -94,16 +103,17 @@ const Daily_Recipe = () => {
           imageSrc={krosan1}
           handleCloseModal={handleCloseModal}
           onHide={handleHideModal}
+          pdf={handleClick}
         ></DailyRecipeModal>
       )}
 
       <div>
-        <button
-          onClick={handleClick}
-          className="fixed bottom-2 right-2 shadow-lg p-4 bg-sandybrown text-white rounded-full z-50"
-        >
-          Download Recipe PDF
-        </button>
+      <button
+      onClick={handleToken}
+      className="fixed bottom-2 right-2 shadow-lg p-4 bg-sandybrown text-white rounded-full z-50"
+    >
+      {!token ? 'Add your recipe' : 'Add your recipe'}
+    </button>
       </div>
     </div>
   );
