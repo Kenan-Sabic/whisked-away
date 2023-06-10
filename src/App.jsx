@@ -17,7 +17,7 @@ import UserPageLikedRecipes from './pages/UserPageLikedRecipes';
 import UserPageSavedRecipes from './pages/UserPageSavedRecipes';
 import ImageTest from './pages/ImageTest';
 import ViewUser from './pages/ViewUser';
-import PasswordReset from './pages/PasswordReset';
+import ForgotPassword from './pages/ForgotPassword';
 function App() {
 	return (
 		<div>
@@ -35,10 +35,13 @@ function App() {
 				<Route path='/user/view/:id' element={<ViewUser />}></Route>
 				<Route path='/login' element={<LoginPage />}></Route>
 				<Route path='/register' element={<Registration />}></Route>
-				<Route path='/passwordreset' element={<PasswordReset />}></Route>
+                <Route path='/forgot-password' element={<ForgotPassword />}></Route>
+                <Route path='/reset-password' element={<ResetPassword/>}></Route>
 			</Routes>
 		</div>
 	);
 }
+import ImageTest from './pages/ImageTest';
+import ResetPassword from './pages/ResetPassword';
 
 export default App;
