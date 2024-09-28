@@ -11,7 +11,7 @@ const Registration = () => {
 	const [error, setDefaultResultOrder] = useState('');
 	const handleSubmit = e => {
 		e.preventDefault();
-
+        //comment to fix weird git issues that made a regression
 		//send image to backend
 		const formData = new FormData();
 		formData.append('image', image);
@@ -33,7 +33,7 @@ const Registration = () => {
 		<div>
 			<Navbar />
 			<div className='grid min-h-screen w-full grid-cols-12 bg-jet bg-cover pt-20 md:bg-spices'>
-				<div className='h-7/8 col-start-2 col-end-12 md:col-start-3 md:col-end-11 lg:col-start-5 lg:col-end-9 mb-auto mt-auto rounded-3xl bg-white'>
+				<div className='h-7/8 col-start-2 col-end-12 md:col-start-3 md:col-end-11 lg:col-start-5 lg:col-end-9 mb-auto mt-auto rounded-3xl bg-white '>
 					<div className=' mb-0 h-full w-full rounded-3xl '>
 						<form
 							action='#'
